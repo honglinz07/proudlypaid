@@ -1,0 +1,179 @@
+.beta-badge {
+  color: var(--orange);
+  border: 1px solid #a9ada0;
+  border-radius: 4px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  padding: 4px 5px;
+  font-family: Arial, sans-serif;
+  align-self: center;
+}
+.beta-note {
+  margin: 18px auto 0;
+  max-width: 670px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.catalog-contribute {
+  margin-top: 18px;
+  display: inline-flex;
+}
+.contribution-page {
+  max-width: 1000px;
+  padding-bottom: 70px;
+}
+.contribution-page .page-intro {
+  max-width: 760px;
+}
+.contribution-page .page-intro h1 {
+  font-size: clamp(35px, 5vw, 57px);
+}
+.contribution-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 38px;
+}
+.contribution-form,
+.contribution-guide,
+.contribution-preview {
+  min-width: 0;
+}
+.contribution-form {
+  display: grid;
+  gap: 10px;
+}
+.contribution-form label {
+  font-size: 12px;
+  margin-top: 12px;
+}
+.contribution-form label span {
+  color: var(--orange);
+}
+.contribution-form input,
+.contribution-form textarea,
+.contribution-preview textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.contribution-form textarea,
+.contribution-preview textarea {
+  resize: vertical;
+}
+.contribution-form .button {
+  justify-self: start;
+  margin-top: 10px;
+}
+.contribution-guide {
+  background: #eeeee5;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  align-self: start;
+}
+.contribution-guide h2,
+.contribution-preview h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 16px 0;
+}
+.contribution-guide p,
+.contribution-guide li,
+.contribution-privacy,
+.contribution-status {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+.contribution-guide ol {
+  padding-left: 20px;
+  margin: 20px 0;
+}
+.contribution-guide li {
+  margin-top: 10px;
+}
+.contribution-guide .text-link {
+  font-size: 12px;
+}
+.contribution-preview {
+  scroll-margin-top: 100px;
+  margin-top: 36px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.contribution-preview textarea {
+  min-height: 240px;
+  background: #eeeee5;
+  overflow-wrap: anywhere;
+}
+.contribution-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+.contribution-error {
+  color: #a1422a;
+  font-size: 12px;
+}
+.source-repository {
+  display: flex;
+  justify-content: center;
+  margin-block: 20px;
+}
+@media (max-width: 900px) {
+  .site-header {
+    position: relative;
+  }
+  .main-nav {
+    display: none;
+  }
+  .main-nav.is-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 18px 22px;
+    border: 1px solid var(--line);
+    border-radius: 0 0 8px 8px;
+    background: var(--paper);
+    box-shadow: 0 12px 25px #2727220c;
+  }
+  .mobile-menu {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    border: 0;
+  }
+}
+@media (max-width: 700px) {
+  .contribution-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contribution-guide {
+    padding: 22px;
+  }
+  .contribution-actions .button {
+    flex: 1 1 150px;
+  }
+  .beta-note {
+    font-size: 10px;
+  }
+  .brand .beta-badge {
+    font-size: 7px;
+    padding: 3px 4px;
+  }
+}

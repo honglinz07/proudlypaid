@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "status": "discovery-only",
+  "updatedOn": "2026-10-20",
+  "notes": "Name and URL locators for offline grouping. These are not verified closed-source products, price records or alternative relationships. Some have free plans or open components. Candidate evidence always requires separate review.",
+  "products": [
+    {
+      "id": "notion",
+      "name": "Notion",
+      "aliases": ["Notion"],
+      "category": "collaborative-workspace",
+      "homepage": "https://www.notion.com/",
+      "pricingUrl": "https://www.notion.com/pricing",
+      "scope": "The hosted Notion workspace, excluding SDKs and integrations.",
+      "caseSensitive": false
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "aliases": ["Figma"],
+      "category": "design-and-prototyping",
+      "homepage": "https://www.figma.com/",
+      "pricingUrl": "https://www.figma.com/pricing/",
+      "scope": "The Figma hosted design platform, excluding community assets and separately licensed developer tools.",
+      "caseSensitive": false
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "aliases": ["Slack"],
+      "category": "team-chat",
+      "homepage": "https://slack.com/",
+      "pricingUrl": "https://slack.com/pricing",
+      "scope": "The Slack hosted collaboration service, excluding SDKs and open-source integrations.",
+      "caseSensitive": false
+    },
+    {
+      "id": "uptimerobot",
+      "name": "UptimeRobot",
+      "aliases": ["UptimeRobot"],
+      "category": "uptime-monitoring",
+      "homepage": "https://uptimerobot.com/",
+      "pricingUrl": "https://uptimerobot.com/pricing/",
+      "scope": "The UptimeRobot hosted monitoring platform, excluding API clients.",
+      "caseSensitive": false
+    },
+    {
+      "id": "firebase",
+      "name": "Firebase",
+      "aliases": ["Firebase"],
+      "category": "backend-platform",
+      "homepage": "https://firebase.google.com/",
+      "pricingUrl": "https://firebase.google.com/pricing",
+      "scope": "Google-hosted Firebase backend services, not the Firebase SDK repositories.",
+      "caseSensitive": false
+    },
+    {
+      "id": "datadog",
+      "name": "Datadog",
+      "aliases": ["Datadog"],
+      "category": "observability",
+      "homepage": "https://www.datadoghq.com/",
+      "pricingUrl": "https://www.datadoghq.com/pricing/list/",
+      "scope": "The Datadog hosted observability service, excluding separately licensed agents, SDKs, and integrations.",
+      "caseSensitive": false
+    },
+    {
+      "id": "confluence-cloud",
+      "name": "Confluence Cloud",
+      "aliases": ["Confluence Cloud", "Confluence"],
+      "category": "collaborative-workspace",
+      "homepage": "https://www.atlassian.com/software/confluence",
+      "pricingUrl": "https://www.atlassian.com/en/software/confluence/pricing",
+      "scope": "Confluence Cloud hosted workspace; excludes Data Center source access, plugins, and third-party open-source components.",
+      "caseSensitive": false
+    },
+    {
+      "id": "sketch",
+      "name": "Sketch",
+      "aliases": ["Sketch"],
+      "category": "design-and-prototyping",
+      "homepage": "https://www.sketch.com/",
+      "pricingUrl": "https://www.sketch.com/pricing/",
+      "scope": "Sketch subscription platform, including the native Mac editor and hosted collaboration; excludes separately licensed optional open-source components.",
+      "caseSensitive": false
+    },
+    {
+      "id": "microsoft-teams",
+      "name": "Microsoft Teams",
+      "aliases": ["Microsoft Teams", "MS Teams"],
+      "category": "team-chat",
+      "homepage": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+      "pricingUrl": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options",
+      "scope": "Microsoft-hosted Teams business service; excludes SDKs, sample applications, and separately licensed components.",
+      "caseSensitive": false
+    },
+    {
+      "id": "pingdom",
+      "name": "Pingdom",
+      "aliases": ["Pingdom"],
+      "category": "uptime-monitoring",
+      "homepage": "https://www.pingdom.com/",
+      "pricingUrl": "https://www.pingdom.com/pricing/",
+      "scope": "SolarWinds-operated Pingdom monitoring service; excludes independently licensed client tools.",
+      "caseSensitive": false
+    },
+    {
+      "id": "new-relic",
+      "name": "New Relic",
+      "aliases": ["New Relic"],
+      "category": "observability",
+      "homepage": "https://newrelic.com/",
+      "pricingUrl": "https://newrelic.com/pricing",
+      "scope": "New Relic paid hosted observability service; excludes open-source agents, instrumentation and documentation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "dynatrace",
+      "name": "Dynatrace",
+      "aliases": ["Dynatrace"],
+      "category": "observability",
+      "homepage": "https://www.dynatrace.com/",
+      "pricingUrl": "https://www.dynatrace.com/pricing/",
+      "scope": "Dynatrace hosted observability platform; excludes separately licensed agents, integrations and open-source contributions.",
+      "caseSensitive": false
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "aliases": ["Airtable"],
+      "category": "no-code-database",
+      "homepage": "https://airtable.com/",
+      "pricingUrl": "https://airtable.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "trello",
+      "name": "Trello",
+      "aliases": ["Trello"],
+      "category": "project-management",
+      "homepage": "https://trello.com/",
+      "pricingUrl": "https://trello.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "asana",
+      "name": "Asana",
+      "aliases": ["Asana"],
+      "category": "project-management",
+      "homepage": "https://asana.com/",
+      "pricingUrl": "https://asana.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "jira-cloud",
+      "name": "Jira",
+      "aliases": ["Jira", "Jira Cloud"],
+      "category": "project-management",
+      "homepage": "https://www.atlassian.com/software/jira",
+      "pricingUrl": "https://www.atlassian.com/en/software/jira/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "aliases": ["Linear"],
+      "category": "project-management",
+      "homepage": "https://linear.app/",
+      "pricingUrl": "https://linear.app/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": true
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "aliases": ["Miro"],
+      "category": "whiteboard",
+      "homepage": "https://miro.com/",
+      "pricingUrl": "https://miro.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "aliases": ["Zapier"],
+      "category": "automation",
+      "homepage": "https://zapier.com/",
+      "pricingUrl": "https://zapier.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "typeform",
+      "name": "Typeform",
+      "aliases": ["Typeform"],
+      "category": "forms",
+      "homepage": "https://www.typeform.com/",
+      "pricingUrl": "https://www.typeform.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "postman",
+      "name": "Postman",
+      "aliases": ["Postman"],
+      "category": "api-development",
+      "homepage": "https://www.postman.com/",
+      "pricingUrl": "https://www.postman.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "auth0",
+      "name": "Auth0",
+      "aliases": ["Auth0"],
+      "category": "identity",
+      "homepage": "https://auth0.com/",
+      "pricingUrl": "https://auth0.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "algolia",
+      "name": "Algolia",
+      "aliases": ["Algolia"],
+      "category": "search",
+      "homepage": "https://www.algolia.com/",
+      "pricingUrl": "https://www.algolia.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "retool",
+      "name": "Retool",
+      "aliases": ["Retool"],
+      "category": "internal-tools",
+      "homepage": "https://retool.com/",
+      "pricingUrl": "https://retool.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "intercom",
+      "name": "Intercom",
+      "aliases": ["Intercom"],
+      "category": "customer-support",
+      "homepage": "https://www.intercom.com/",
+      "pricingUrl": "https://www.intercom.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "zendesk",
+      "name": "Zendesk",
+      "aliases": ["Zendesk"],
+      "category": "customer-support",
+      "homepage": "https://www.zendesk.com/",
+      "pricingUrl": "https://www.zendesk.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "clickup",
+      "name": "ClickUp",
+      "aliases": ["ClickUp"],
+      "category": "project-management",
+      "homepage": "https://clickup.com/",
+      "pricingUrl": "https://clickup.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "monday",
+      "name": "monday.com",
+      "aliases": ["monday.com", "Monday"],
+      "category": "project-management",
+      "homepage": "https://monday.com/",
+      "pricingUrl": "https://monday.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": true
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "aliases": ["Vercel"],
+      "category": "application-hosting",
+      "homepage": "https://vercel.com/",
+      "pricingUrl": "https://vercel.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "aliases": ["Netlify"],
+      "category": "application-hosting",
+      "homepage": "https://www.netlify.com/",
+      "pricingUrl": "https://www.netlify.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "heroku",
+      "name": "Heroku",
+      "aliases": ["Heroku"],
+      "category": "application-hosting",
+      "homepage": "https://www.heroku.com/",
+      "pricingUrl": "https://www.heroku.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "jotform",
+      "name": "Jotform",
+      "aliases": ["Jotform"],
+      "category": "forms",
+      "homepage": "https://www.jotform.com/",
+      "pricingUrl": "https://www.jotform.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "make",
+      "name": "Make",
+      "aliases": ["Make", "Make.com", "Integromat"],
+      "category": "automation",
+      "homepage": "https://www.make.com/",
+      "pricingUrl": "https://www.make.com/en/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": true
+    },
+    {
+      "id": "pipedream",
+      "name": "Pipedream",
+      "aliases": ["Pipedream"],
+      "category": "automation",
+      "homepage": "https://pipedream.com/",
+      "pricingUrl": "https://pipedream.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "superblocks",
+      "name": "Superblocks",
+      "aliases": ["Superblocks"],
+      "category": "internal-tools",
+      "homepage": "https://www.superblocks.com/",
+      "pricingUrl": "https://www.superblocks.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "mailchimp",
+      "name": "Mailchimp",
+      "aliases": ["Mailchimp"],
+      "category": "email-marketing",
+      "homepage": "https://mailchimp.com/",
+      "pricingUrl": "https://mailchimp.com/pricing/marketing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "hubspot",
+      "name": "HubSpot",
+      "aliases": ["HubSpot"],
+      "category": "crm",
+      "homepage": "https://www.hubspot.com/",
+      "pricingUrl": "https://www.hubspot.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "salesforce-service-cloud",
+      "name": "Salesforce Service Cloud",
+      "aliases": ["Salesforce Service Cloud"],
+      "category": "customer-support",
+      "homepage": "https://www.salesforce.com/service/",
+      "pricingUrl": "https://www.salesforce.com/service/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "onepassword",
+      "name": "1Password",
+      "aliases": ["1Password", "OnePassword"],
+      "category": "password-manager",
+      "homepage": "https://1password.com/",
+      "pricingUrl": "https://1password.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "mixpanel",
+      "name": "Mixpanel",
+      "aliases": ["Mixpanel"],
+      "category": "analytics",
+      "homepage": "https://mixpanel.com/",
+      "pricingUrl": "https://mixpanel.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "amplitude",
+      "name": "Amplitude",
+      "aliases": ["Amplitude"],
+      "category": "analytics",
+      "homepage": "https://amplitude.com/",
+      "pricingUrl": "https://amplitude.com/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "coda",
+      "name": "Coda",
+      "aliases": ["Coda"],
+      "category": "collaborative-workspace",
+      "homepage": "https://coda.io/",
+      "pricingUrl": "https://coda.io/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": true
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "aliases": ["Zoom"],
+      "category": "video-meetings",
+      "homepage": "https://www.zoom.com/",
+      "pricingUrl": "https://www.zoom.com/en/products/collaboration-tools/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "aliases": ["Discord"],
+      "category": "team-chat",
+      "homepage": "https://discord.com/",
+      "pricingUrl": "https://discord.com/nitro",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "lucidchart",
+      "name": "Lucidchart",
+      "aliases": ["Lucidchart"],
+      "category": "diagramming",
+      "homepage": "https://www.lucidchart.com/",
+      "pricingUrl": "https://www.lucidchart.com/pages/pricing",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "photoshop",
+      "name": "Adobe Photoshop",
+      "aliases": ["Adobe Photoshop", "Photoshop"],
+      "category": "image-editing",
+      "homepage": "https://www.adobe.com/products/photoshop.html",
+      "pricingUrl": "https://www.adobe.com/products/photoshop/plans.html",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "aliases": ["Canva"],
+      "category": "design",
+      "homepage": "https://www.canva.com/",
+      "pricingUrl": "https://www.canva.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "okta",
+      "name": "Okta",
+      "aliases": ["Okta"],
+      "category": "identity",
+      "homepage": "https://www.okta.com/",
+      "pricingUrl": "https://www.okta.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "freshdesk",
+      "name": "Freshdesk",
+      "aliases": ["Freshdesk"],
+      "category": "customer-support",
+      "homepage": "https://www.freshworks.com/freshdesk/",
+      "pricingUrl": "https://www.freshworks.com/freshdesk/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "helpscout",
+      "name": "Help Scout",
+      "aliases": ["Help Scout", "HelpScout"],
+      "category": "customer-support",
+      "homepage": "https://www.helpscout.com/",
+      "pricingUrl": "https://www.helpscout.com/pricing/",
+      "scope": "Discovery identity only. Exact proprietary and paid offering scope requires review before recommendation.",
+      "caseSensitive": false
+    },
+    {
+      "id": "uxpin",
+      "name": "UXPin",
+      "aliases": ["UXPin"],
+      "category": "design-and-prototyping",
+      "homepage": "https://www.uxpin.com/",
+      "pricingUrl": "https://www.uxpin.com/pricing",
+      "scope": "Discovery identity for the hosted service only. Individual candidate relationships, prices and source availability require their own review.",
+      "caseSensitive": false
+    },
+    {
+      "id": "twist",
+      "name": "Twist",
+      "aliases": ["Twist"],
+      "category": "team-chat",
+      "homepage": "https://twist.com/",
+      "pricingUrl": "https://twist.com/pricing",
+      "scope": "Discovery identity for the hosted service only. Individual candidate relationships, prices and source availability require their own review.",
+      "caseSensitive": true
+    },
+    {
+      "id": "basecamp",
+      "name": "Basecamp",
+      "aliases": ["Basecamp"],
+      "category": "project-management",
+      "homepage": "https://basecamp.com/",
+      "pricingUrl": "https://basecamp.com/pricing",
+      "scope": "Discovery identity for the hosted service only. Individual candidate relationships, prices and source availability require their own review.",
+      "caseSensitive": false
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+.catalog-filter select,
+.catalog-filter input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  margin: 10px 0 18px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 5px;
+  font-size: 11px;
+}
+.catalog-filter :disabled {
+  opacity: 0.55;
+}
+.catalog-muted,
+.catalog-footer,
+.catalog-project-summary p,
+.catalog-pending {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.catalog-muted {
+  margin: 15px 0;
+}
+.catalog-footer {
+  margin-top: 35px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+  font-size: 10px;
+}
+.project-matches {
+  margin-bottom: 22px;
+}
+.project-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.project-option {
+  display: grid;
+  gap: 5px;
+  text-align: left;
+  min-width: 0;
+  max-width: 100%;
+  padding: 12px 15px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.project-option span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.project-option small {
+  font-size: 9px;
+  color: var(--orange);
+}
+.project-option.is-selected {
+  border-color: #839272;
+  background: #edf0e6;
+}
+.catalog-project-summary {
+  padding: 20px 0;
+  border-block: 1px solid var(--line);
+}
+.catalog-project-summary h2 {
+  margin-bottom: 9px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.catalog-project-summary > a {
+  font-size: 12px;
+}
+.catalog-project-summary p {
+  margin-top: 12px;
+}
+.catalog-project-summary a,
+.catalog-details a,
+.price-component a,
+.nonfixed-price a {
+  color: #8e421f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.catalog-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  margin: 30px 0 17px;
+}
+.catalog-section-heading h2 {
+  font-size: 17px;
+  font-weight: 500;
+}
+.catalog-section-heading > span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.price-group {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.price-group > h3 {
+  background: #eeeee5;
+  padding: 11px 15px;
+  font-size: 11px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.price-component {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px 20px;
+  border-top: 1px solid var(--line);
+}
+.price-component > div {
+  display: grid;
+  gap: 5px;
+  font-size: 13px;
+}
+.price-component > div span {
+  color: var(--muted);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.component-amount {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.price-component details {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  line-height: 1.9;
+}
+.price-component :where(details p) {
+  margin: 8px 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.price-component summary,
+.catalog-details summary {
+  cursor: pointer;
+  color: #5c684f;
+}
+.catalog-product .product-description {
+  min-height: 0;
+  overflow-wrap: anywhere;
+}
+.catalog-product .product-title a {
+  display: inline;
+}
+.catalog-status {
+  font-size: 10px;
+  color: #5c684f;
+  margin: 16px 0;
+}
+.catalog-details {
+  font-size: 11px;
+  line-height: 1.9;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 20px;
+}
+.catalog-details p {
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+.evidence-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.nonfixed-price {
+  display: grid;
+  gap: 7px;
+  font-size: 11px;
+  border-top: 1px solid var(--line);
+  padding-top: 15px;
+  margin-top: 15px;
+  line-height: 1.7;
+}
+.nonfixed-price > strong {
+  font-size: 14px;
+}
+.nonfixed-price p {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.catalog-pending {
+  padding: 14px;
+  background: #eeeee5;
+  border-radius: 6px;
+  margin-top: 18px;
+}
+.project-discovery {
+  display: grid;
+  gap: 18px;
+}
+.project-discovery h3 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.project-discovery p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.project-discovery .text-link {
+  font-size: 11px;
+}
+@media (max-width: 600px) {
+  .catalog-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .price-component {
+    gap: 12px;
+    padding: 13px;
+  }
+  .component-amount {
+    font-size: 21px;
+  }
+  .project-option {
+    flex: 1 1 140px;
+  }
+  .catalog-filter {
+    grid-column: 1 / -1;
+  }
+}

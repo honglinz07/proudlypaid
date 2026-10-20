@@ -1,0 +1,20 @@
+{
+  "name": "@closedsources/api",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/wrangler.mjs dev --ip 127.0.0.1 --port 8787 --persist-to ../../.local/worker-state",
+    "build": "npm run typecheck && node ../../scripts/wrangler.mjs deploy --dry-run --outdir dist",
+    "types": "node ../../scripts/wrangler.mjs types",
+    "typecheck": "npm run types && tsc --noEmit",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@closedsources/contracts": "*"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.2"
+  }
+}

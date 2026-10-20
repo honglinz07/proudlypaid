@@ -1,0 +1,43 @@
+{
+  "name": "closedsources",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source software for finding closed-source software. The irony is included.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "npm run dev --workspace @closedsources/web",
+    "dev:api": "npm run dev --workspace @closedsources/api",
+    "build": "npm run build --workspaces --if-present && node scripts/wrangler.mjs deploy --config wrangler.production.jsonc --dry-run --outdir dist/production",
+    "deploy:cloudflare": "npm run build && node scripts/wrangler.mjs deploy --config wrangler.production.jsonc",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "biome lint --error-on-warnings .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "catalog:check": "node scripts/check-catalog.mjs",
+    "catalog:discover": "node scripts/discover-catalog.mjs",
+    "catalog:group": "node scripts/group-catalog-candidates.mjs",
+    "catalog:seed": "node scripts/seed-catalog.mjs",
+    "db:local": "node scripts/setup-local-db.mjs",
+    "github:collect": "node scripts/github-collector.mjs collect",
+    "github:status": "node scripts/github-collector.mjs status",
+    "github:verify": "node scripts/github-collector.mjs verify",
+    "test:catalog": "node --test test/catalog*.test.mjs",
+    "test:github-collector": "node --test test/github-collector.test.mjs",
+    "test": "npm run test:catalog && npm run test:github-collector && npm run test --workspaces --if-present",
+    "check": "npm run catalog:check && npm run typecheck && npm run lint && npm run format:check && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

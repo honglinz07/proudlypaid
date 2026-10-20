@@ -1,0 +1,2710 @@
+{
+  "schemaVersion": 1,
+  "status": "research-pilot",
+  "reviewedOn": "2026-10-20",
+  "license": "MIT",
+  "notes": "Manually researched facts and original summaries. Reviewed records are served by the Lite search API after snapshot import. Prices retain their original units; there is no global price ranking.",
+  "projects": [
+    {
+      "id": "appflowy",
+      "name": "AppFlowy",
+      "aliases": ["App Flowy"],
+      "category": "collaborative-workspace",
+      "repository": "https://github.com/AppFlowy-IO/AppFlowy",
+      "license": {
+        "label": "AGPL-3.0",
+        "url": "https://github.com/AppFlowy-IO/AppFlowy/blob/main/LICENSE",
+        "scope": "The linked AppFlowy repository, not every separately distributed cloud component. AGPL version is recorded without asserting an only/or-later distinction."
+      },
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "penpot",
+      "name": "Penpot",
+      "aliases": [],
+      "category": "design-and-prototyping",
+      "repository": "https://github.com/penpot/penpot",
+      "license": {
+        "label": "MPL-2.0",
+        "url": "https://github.com/penpot/penpot/blob/develop/LICENSE",
+        "scope": "The linked Penpot repository."
+      },
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "zulip",
+      "name": "Zulip",
+      "aliases": ["Zulip Server"],
+      "category": "team-chat",
+      "repository": "https://github.com/zulip/zulip",
+      "license": {
+        "label": "Apache-2.0",
+        "url": "https://github.com/zulip/zulip/blob/main/LICENSE",
+        "scope": "The Zulip server and web application repository."
+      },
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "uptime-kuma",
+      "name": "Uptime Kuma",
+      "aliases": ["uptime-kuma", "UptimeKuma"],
+      "category": "uptime-monitoring",
+      "repository": "https://github.com/louislam/uptime-kuma",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/louislam/uptime-kuma/blob/master/LICENSE",
+        "scope": "The linked Uptime Kuma repository."
+      },
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "aliases": [],
+      "category": "backend-platform",
+      "repository": "https://github.com/supabase/supabase",
+      "license": {
+        "label": "Apache-2.0",
+        "url": "https://github.com/supabase/supabase/blob/master/LICENSE",
+        "scope": "The main repository license. Bundled projects and individual components retain their own licenses."
+      },
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "grafana-oss",
+      "name": "Grafana OSS",
+      "aliases": ["Grafana"],
+      "category": "observability",
+      "repository": "https://github.com/grafana/grafana",
+      "license": {
+        "label": "AGPL-3.0",
+        "url": "https://github.com/grafana/grafana/blob/main/LICENSE",
+        "scope": "Grafana OSS, excluding separate enterprise offerings. AGPL version is recorded without asserting an only/or-later distinction."
+      },
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "baserow",
+      "name": "Baserow Community",
+      "aliases": ["baserow", "baserow/baserow"],
+      "category": "no-code-database",
+      "repository": "https://github.com/baserow/baserow",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/baserow/baserow",
+        "scope": "Community features only; premium and enterprise directories retain separate licensing."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "activepieces",
+      "name": "Activepieces Community",
+      "aliases": ["activepieces", "activepieces/activepieces"],
+      "category": "automation",
+      "repository": "https://github.com/activepieces/activepieces",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/activepieces/activepieces/blob/main/LICENSE",
+        "scope": "Community Edition only; enterprise features have a commercial license."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "affine",
+      "name": "AFFiNE Community",
+      "aliases": ["AFFiNE", "toeverything/AFFiNE"],
+      "category": "collaborative-workspace",
+      "repository": "https://github.com/toeverything/AFFiNE",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/toeverything/AFFiNE",
+        "scope": "Community Edition only; enterprise components and offerings are outside this scope."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "focalboard",
+      "name": "Focalboard standalone",
+      "aliases": ["focalboard", "mattermost-community/focalboard"],
+      "category": "project-management",
+      "repository": "https://github.com/mattermost-community/focalboard",
+      "license": {
+        "label": "AGPL-3.0 with exceptions",
+        "url": "https://github.com/mattermost-community/focalboard/blob/main/LICENSE.txt",
+        "scope": "Source-built standalone edition under AGPL with stated exceptions; vendor-compiled binaries and designated configuration/admin files have different terms."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "leantime",
+      "name": "Leantime",
+      "aliases": ["leantime", "Leantime/leantime"],
+      "category": "project-management",
+      "repository": "https://github.com/Leantime/leantime",
+      "license": {
+        "label": "AGPL-3.0",
+        "url": "https://github.com/Leantime/leantime",
+        "scope": "Core application only; plugins under app/Plugins can have different or enterprise licenses."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "openproject",
+      "name": "OpenProject Community",
+      "aliases": ["openproject", "opf/openproject"],
+      "category": "project-management",
+      "repository": "https://github.com/opf/openproject",
+      "license": {
+        "label": "GPL-3.0",
+        "url": "https://github.com/opf/openproject",
+        "scope": "Community source only; separately licensed assets and enterprise offerings excluded."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "hoppscotch",
+      "name": "Hoppscotch Community",
+      "aliases": ["hoppscotch", "hoppscotch/hoppscotch"],
+      "category": "api-development",
+      "repository": "https://github.com/hoppscotch/hoppscotch",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/hoppscotch/hoppscotch",
+        "scope": "Community source; enterprise features and proprietary services excluded."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "formbricks",
+      "name": "Formbricks Core",
+      "aliases": ["formbricks", "formbricks/formbricks"],
+      "category": "forms",
+      "repository": "https://github.com/formbricks/formbricks",
+      "license": {
+        "label": "AGPL-3.0",
+        "url": "https://github.com/formbricks/formbricks/blob/main/LICENSE",
+        "scope": "Core application only; apps/web/modules/ee is separately enterprise-licensed."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "chatwoot",
+      "name": "Chatwoot Community",
+      "aliases": ["chatwoot", "chatwoot/chatwoot"],
+      "category": "customer-support",
+      "repository": "https://github.com/chatwoot/chatwoot",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/chatwoot/chatwoot",
+        "scope": "Community source; enterprise features, external providers and hosted services are outside this scope."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "appsmith",
+      "name": "Appsmith Community",
+      "aliases": ["appsmith", "appsmithorg/appsmith"],
+      "category": "internal-tools",
+      "repository": "https://github.com/appsmithorg/appsmith",
+      "license": {
+        "label": "Apache-2.0",
+        "url": "https://github.com/appsmithorg/appsmith/blob/release/LICENSE",
+        "scope": "Community features; commercial editions and separately licensed directories excluded."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "coolify",
+      "name": "Coolify",
+      "aliases": ["coolify", "coollabsio/coolify"],
+      "category": "application-hosting",
+      "repository": "https://github.com/coollabsio/coolify",
+      "license": {
+        "label": "Apache-2.0",
+        "url": "https://github.com/coollabsio/coolify/blob/main/LICENSE",
+        "scope": "Linked self-hosted source; does not classify all services advertised by project sponsors."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "dokploy",
+      "name": "Dokploy community components",
+      "aliases": ["dokploy", "Dokploy/dokploy"],
+      "category": "application-hosting",
+      "repository": "https://github.com/Dokploy/dokploy",
+      "license": {
+        "label": "Apache-2.0 with excluded components",
+        "url": "https://github.com/Dokploy/dokploy/blob/canary/LICENSE.MD",
+        "scope": "Only content covered by the Apache grant; proprietary directory and additional license restrictions explicitly excluded."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "keycloak",
+      "name": "Keycloak",
+      "aliases": ["keycloak", "keycloak/keycloak"],
+      "category": "identity",
+      "repository": "https://github.com/keycloak/keycloak",
+      "license": {
+        "label": "Apache-2.0",
+        "url": "https://github.com/keycloak/keycloak",
+        "scope": "Linked application source; third-party components retain their own notices."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "meilisearch",
+      "name": "Meilisearch Community",
+      "aliases": ["meilisearch", "meilisearch/meilisearch"],
+      "category": "search",
+      "repository": "https://github.com/meilisearch/meilisearch",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/meilisearch/meilisearch",
+        "scope": "Community engine only; Enterprise components under commercial or BSL terms are excluded."
+      },
+      "reviewedOn": "2026-10-19"
+    },
+    {
+      "id": "plane",
+      "name": "Plane Community",
+      "aliases": ["Plane"],
+      "category": "project-management",
+      "repository": "https://github.com/makeplane/plane",
+      "license": {
+        "label": "AGPL-3.0",
+        "url": "https://github.com/makeplane/plane/blob/master/LICENSE.txt",
+        "scope": "Community code in the linked repository under its AGPL license; separately licensed commercial editions and hosted offerings are excluded. Third-party components retain their own licenses."
+      },
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "wekan",
+      "name": "Wekan",
+      "aliases": ["WeKan"],
+      "category": "project-management",
+      "repository": "https://github.com/wekan/wekan",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/wekan/wekan/blob/main/LICENSE",
+        "scope": "The linked Wekan repository under its MIT license. Separately licensed dependencies and integrations are outside this scope."
+      },
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "excalidraw",
+      "name": "Excalidraw",
+      "aliases": [],
+      "category": "whiteboard-and-diagrams",
+      "repository": "https://github.com/excalidraw/excalidraw",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/excalidraw/excalidraw/blob/master/LICENSE",
+        "scope": "The linked open-source editor repository; Excalidraw Plus subscriptions, third-party fonts, libraries and other separately licensed assets are excluded."
+      },
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "bruno",
+      "name": "Bruno Community",
+      "aliases": ["Bruno"],
+      "category": "api-development",
+      "repository": "https://github.com/usebruno/bruno",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/usebruno/bruno/blob/main/license.md",
+        "scope": "MIT-covered community code in this repository only. Commercial editions, separately licensed dependencies and the OpenMoji-derived logo under CC BY-SA 4.0 are excluded."
+      },
+      "reviewedOn": "2026-10-20"
+    }
+  ],
+  "products": [
+    {
+      "id": "notion",
+      "name": "Notion",
+      "homepage": "https://www.notion.com/",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The hosted Notion workspace, excluding SDKs and integrations.",
+        "evidenceUrls": ["https://alternativeto.net/software/appflowy/"],
+        "notes": "AlternativeTo labels Notion proprietary. The vendor terms endpoint redirected to a JavaScript page whose agreement text was unavailable during this pass; official classification review remains pending.",
+        "reviewedOn": "2026-10-17"
+      },
+      "pricing": [
+        {
+          "plan": "Business",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 19.5,
+          "currency": "EUR",
+          "unit": "member",
+          "period": "month",
+          "billing": "unknown",
+          "configuration": "The fetched pricing page displayed EUR; its active monthly/yearly toggle was not exposed in the text extraction.",
+          "notes": "Observed amount only. Confirm billing selection and region before comparison; no USD conversion has been made.",
+          "sourceUrl": "https://www.notion.com/pricing",
+          "reviewedOn": "2026-10-17"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "configuration": "Custom enterprise agreement.",
+          "notes": "The official page requests a sales quote; price is unknown, not zero.",
+          "sourceUrl": "https://www.notion.com/pricing",
+          "reviewedOn": "2026-10-17"
+        }
+      ],
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "homepage": "https://www.figma.com/",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The Figma hosted design platform, excluding community assets and separately licensed developer tools.",
+        "evidenceUrls": ["https://www.figma.com/ssa/"],
+        "notes": "Catalog classification inferred from the vendor agreement: sections 2.2 and 2.7 restrict source discovery and modification and reserve platform rights. This is a scoped research judgment.",
+        "reviewedOn": "2026-10-17"
+      },
+      "pricing": [
+        {
+          "plan": "Enterprise — Full seat",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 90,
+          "currency": "USD",
+          "unit": "full-seat",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "One Full seat, Enterprise plan, annual billing; optional add-ons excluded.",
+          "notes": "Monthly-equivalent advertised unit price with annual billing. Dev and Collab seats are different products and are not substituted for Full seats. This is not an all-in contract quote.",
+          "sourceUrl": "https://www.figma.com/pricing/",
+          "reviewedOn": "2026-10-17"
+        }
+      ],
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "homepage": "https://slack.com/",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The Slack hosted collaboration service, excluding SDKs and open-source integrations.",
+        "evidenceUrls": [
+          "https://slack.com/intl/en-gb/main-services-agreement",
+          "https://slack.com/intl/en-gb/slack-supplemental-terms",
+          "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/salesforce_MSA.pdf"
+        ],
+        "notes": "Research judgment for paid Slack workspaces. The Slack terms incorporate the Salesforce MSA; its use restrictions limit copying, modification and reverse engineering of the service. Open SDKs, integrations and user content are excluded. Reviewed MSA dated October 15, 2026; separately negotiated agreements may differ.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Business+",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 15,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "One user on Business+, paying annually; temporary introductory promotions excluded.",
+          "notes": "Official regular annual-billing unit price. The same page advertises a limited three-month discount on monthly billing, which is not used here.",
+          "sourceUrl": "https://slack.com/pricing",
+          "reviewedOn": "2026-10-17"
+        },
+        {
+          "plan": "Enterprise+",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "configuration": "Custom enterprise agreement.",
+          "notes": "The official page requests a sales quote.",
+          "sourceUrl": "https://slack.com/pricing",
+          "reviewedOn": "2026-10-17"
+        }
+      ],
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "uptimerobot",
+      "name": "UptimeRobot",
+      "homepage": "https://uptimerobot.com/",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The UptimeRobot hosted monitoring platform, excluding API clients.",
+        "evidenceUrls": [
+          "https://alternativeto.net/software/uptimerobot/",
+          "https://uptimerobot.com/terms/"
+        ],
+        "notes": "AlternativeTo labels the service proprietary. Vendor terms section 6 reserves intellectual property, but ownership alone does not prove source availability; the official classification remains pending.",
+        "reviewedOn": "2026-10-17"
+      },
+      "pricing": [
+        {
+          "plan": "Scale — 200 monitors",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 65,
+          "currency": "USD",
+          "unit": "account",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Default Scale configuration: 200 monitors and 5 included seats; annual charge shown as USD 780.",
+          "notes": "The canonical page displayed 65/month and 780/year, but a separately indexed official URL variant displayed 79/month and 948/year for the same named configuration. Treat 65 as an observation until region, offer, and active configuration are confirmed. The 500-monitor tier and add-ons are excluded.",
+          "sourceUrl": "https://uptimerobot.com/pricing/",
+          "conflictingObservationUrl": "https://uptimerobot.com/pricing/?orderBy=name0",
+          "reviewedOn": "2026-10-17"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "configuration": "Custom monitor volume and procurement requirements.",
+          "notes": "The official page requests a sales conversation.",
+          "sourceUrl": "https://uptimerobot.com/pricing/",
+          "reviewedOn": "2026-10-17"
+        }
+      ],
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "firebase",
+      "name": "Firebase",
+      "homepage": "https://firebase.google.com/",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "Google-hosted Firebase backend services, not the Firebase SDK repositories.",
+        "evidenceUrls": [
+          "https://alternativeto.net/software/firebase/",
+          "https://firebase.google.com/terms"
+        ],
+        "notes": "The platform comprises multiple services with different applicable terms. The official terms index was reviewed, but component-level classification remains pending.",
+        "reviewedOn": "2026-10-17"
+      },
+      "pricing": [
+        {
+          "plan": "Blaze",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "service-specific-usage",
+          "period": null,
+          "billing": "usage-based",
+          "configuration": "Service mix, region, quotas, and workload have not been selected.",
+          "notes": "The official plan is pay-as-you-go. A monthly total requires a workload model; no fixed fee or zero-cost assumption is assigned.",
+          "sourceUrl": "https://firebase.google.com/pricing",
+          "reviewedOn": "2026-10-17"
+        }
+      ],
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "datadog",
+      "name": "Datadog",
+      "homepage": "https://www.datadoghq.com/",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The Datadog hosted observability service, excluding separately licensed agents, SDKs, and integrations.",
+        "evidenceUrls": ["https://www.datadoghq.com/legal/msa/"],
+        "notes": "Catalog classification inferred from the vendor agreement restrictions on service modification and source-code discovery. It does not classify every Datadog repository as closed source.",
+        "reviewedOn": "2026-10-17"
+      },
+      "pricing": [
+        {
+          "plan": "Infrastructure Enterprise",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 23,
+          "currency": "USD",
+          "unit": "infrastructure-host",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Datadog site us; one infrastructure host; annual billing; other products, extra metrics, and add-ons excluded.",
+          "notes": "Official price-list row with a monthly unit rate under annual billing. This is one infrastructure SKU, not the maximum Datadog price or the full cost of replacing a Grafana deployment.",
+          "sourceUrl": "https://www.datadoghq.com/pricing/list/",
+          "reviewedOn": "2026-10-17"
+        }
+      ],
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "confluence-cloud",
+      "name": "Confluence Cloud",
+      "homepage": "https://www.atlassian.com/software/confluence",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "Confluence Cloud hosted workspace; excludes Data Center source access, plugins, and third-party open-source components.",
+        "evidenceUrls": ["https://www.atlassian.com/legal/atlassian-customer-agreement"],
+        "notes": "Scoped research inference from sections 2.1 and 2.2: subscription use rights with source-access, modification, and redistribution restrictions. Limited source access for Software Products is not classified here.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Premium",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 11.16,
+          "currency": null,
+          "unit": "user",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-19",
+          "configuration": "English pricing-page observation; calculator user count and selected billing cycle were not exposed.",
+          "notes": "Observed dollar amount only; region/currency and team-size tier require confirmation. Do not rank until the calculator configuration is reproduced.",
+          "sourceUrl": "https://www.atlassian.com/en/software/confluence/pricing",
+          "currencySymbol": "$"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Confluence Cloud Enterprise; annual subscription, negotiated user tier.",
+          "notes": "Official pricing page directs Enterprise buyers to sales. No quote was requested.",
+          "sourceUrl": "https://www.atlassian.com/en/software/confluence/pricing"
+        }
+      ]
+    },
+    {
+      "id": "sketch",
+      "name": "Sketch",
+      "homepage": "https://www.sketch.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-software",
+        "verification": "official-reviewed",
+        "scope": "Sketch subscription platform, including the native Mac editor and hosted collaboration; excludes separately licensed optional open-source components.",
+        "evidenceUrls": ["https://www.sketch.com/tos/"],
+        "notes": "Scoped research inference from the platform restrictions on modification and source derivation; optional open-source components are explicitly separate.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Standard",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 12,
+          "currency": null,
+          "unit": "editor",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One Editor, monthly equivalent billed yearly, direct website subscription.",
+          "notes": "Amount and annual billing are visible. Extraction shows a dollar symbol without an ISO currency; confirm currency before ranking. Editor eligibility and custom terms may apply.",
+          "sourceUrl": "https://www.sketch.com/pricing/"
+        },
+        {
+          "plan": "Professional",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 24,
+          "currency": null,
+          "unit": "editor",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One Editor, monthly equivalent billed yearly, direct website subscription.",
+          "notes": "Amount and annual billing are visible. Extraction shows a dollar symbol without an ISO currency; confirm currency before ranking. Editor eligibility and custom terms may apply.",
+          "sourceUrl": "https://www.sketch.com/pricing/"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 44,
+          "currency": null,
+          "unit": "editor",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One Editor, monthly equivalent billed yearly, direct website subscription.",
+          "notes": "Amount and annual billing are visible. Extraction shows a dollar symbol without an ISO currency; confirm currency before ranking. Editor eligibility and custom terms may apply.",
+          "sourceUrl": "https://www.sketch.com/pricing/"
+        },
+        {
+          "plan": "Private Cloud",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Separately hosted platform; negotiated deployment and custom requirements.",
+          "notes": "Official page requests pricing contact and mentions an additional setup fee. Total is unknown.",
+          "sourceUrl": "https://www.sketch.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-teams",
+      "name": "Microsoft Teams",
+      "homepage": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "Microsoft-hosted Teams business service; excludes SDKs, sample applications, and separately licensed components.",
+        "evidenceUrls": ["https://www.microsoft.com/licensing/terms/product/ForallOnlineServices"],
+        "notes": "Scoped research inference from online-service use rights and reverse-engineering restrictions. Applicable customer agreements and product-specific terms can vary.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Teams Essentials",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 4,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "US storefront, one user, annual subscription paid yearly; tax and optional add-ons excluded.",
+          "notes": "Standalone Teams business plan with chat, calls, and meetings. Annual commitment auto-renews.",
+          "sourceUrl": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options"
+        },
+        {
+          "plan": "Microsoft 365 Business Basic with Teams",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 7,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "US storefront, one user, annual subscription paid yearly; version including Teams.",
+          "notes": "Bundle includes other Microsoft 365 services. Not a standalone Teams fee; compare the bundle scope explicitly.",
+          "sourceUrl": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options"
+        }
+      ]
+    },
+    {
+      "id": "pingdom",
+      "name": "Pingdom",
+      "homepage": "https://www.pingdom.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "SolarWinds-operated Pingdom monitoring service; excludes independently licensed client tools.",
+        "evidenceUrls": ["https://www.solarwinds.com/legal/software-services-agreement"],
+        "notes": "Scoped research inference from the SaaS agreement sections 2.1, 3.1 and 4.1: limited subscription access, source-derivation restrictions, and reserved service rights.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Synthetic Monitoring",
+          "kind": "unavailable",
+          "verification": "needs-review",
+          "amount": null,
+          "currency": null,
+          "unit": "subscription",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Public calculator requires monitoring quantity and billing selection; extracted amount was blank.",
+          "notes": "Failed price extraction is not evidence of quote-only pricing. Revisit the rendered public calculator; no historical starting price has been substituted.",
+          "sourceUrl": "https://www.pingdom.com/pricing/"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Enterprise monitoring configuration and volume to be negotiated.",
+          "notes": "Official page provides a Request Quote link. No quote was requested.",
+          "sourceUrl": "https://www.pingdom.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "new-relic",
+      "name": "New Relic",
+      "homepage": "https://newrelic.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "New Relic paid hosted observability service; excludes open-source agents, instrumentation and documentation.",
+        "evidenceUrls": ["https://newrelic.com/termsandconditions/paid"],
+        "notes": "Scoped research inference from paid terms section 1.5 restricting source access, service modification and redistribution. Agent licenses remain separate.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Pro full platform user — user pricing model",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 349,
+          "currency": "USD",
+          "unit": "full-platform-user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "One Pro full-platform user under annual commitment in the user-based model; data ingestion, compute and add-ons excluded.",
+          "notes": "Seat component only; the amount is not the complete observability bill.",
+          "sourceUrl": "https://newrelic.com/pricing"
+        },
+        {
+          "plan": "Paid observability — complete bill",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "users-or-compute-plus-data",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Requires edition, user/compute model, ingestion volume, retention and optional capabilities.",
+          "notes": "User or compute charges combine with data charges; a workload is required to estimate a monthly total.",
+          "sourceUrl": "https://newrelic.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "dynatrace",
+      "name": "Dynatrace",
+      "homepage": "https://www.dynatrace.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "Dynatrace hosted observability platform; excludes separately licensed agents, integrations and open-source contributions.",
+        "evidenceUrls": [
+          "https://ir.dynatrace.com/sec-filings/all-sec-filings/content/0001773383-26-000050/dt-20260630.htm"
+        ],
+        "notes": "Company filing discusses proprietary platform code alongside open-source components. This supports a candidate; the applicable platform subscription agreement has not been reviewed.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Infrastructure Monitoring",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "host-hour",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Infrastructure SKU; host count and monitored hours not specified; other services excluded.",
+          "notes": "Official rate is USD 0.04 per host-hour; the displayed monthly figure is illustrative. No fixed monthly bill is assigned.",
+          "sourceUrl": "https://www.dynatrace.com/pricing/"
+        },
+        {
+          "plan": "Full-Stack Monitoring",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "memory-GiB-hour",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Full-stack SKU; memory size, host count and monitored hours not specified; add-ons excluded.",
+          "notes": "Official rate is USD 0.01 per memory-GiB-hour; requires workload inputs. No fixed monthly bill is assigned.",
+          "sourceUrl": "https://www.dynatrace.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "airtable",
+      "name": "Airtable",
+      "homepage": "https://airtable.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Airtable platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": [
+          "https://www.airtable.com/company/tos",
+          "https://www.airtable.com/company/msa",
+          "https://www.airtable.com/company/aup"
+        ],
+        "notes": "Research judgment for the hosted Airtable platform. Both public subscription agreements incorporate the AUP, which restricts source discovery, modification and redistribution. This excludes separately licensed developer components and customer extensions; negotiated terms may differ.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Team",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 20,
+          "currency": "USD",
+          "unit": "editor",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "One editor with edit access to a base, annual billing; workspace scope.",
+          "notes": "Published plan component; tax, negotiated discounts and add-ons excluded.",
+          "sourceUrl": "https://airtable.com/pricing",
+          "currencyEvidenceUrl": "https://www.airtable.com/company/tos"
+        },
+        {
+          "plan": "Business",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 45,
+          "currency": "USD",
+          "unit": "editor",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "One billable editor, annual billing; organizational scope differs from Team.",
+          "notes": "Published plan component; tax, negotiated discounts and add-ons excluded.",
+          "sourceUrl": "https://airtable.com/pricing",
+          "currencyEvidenceUrl": "https://www.airtable.com/company/tos"
+        },
+        {
+          "plan": "Enterprise Scale",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://airtable.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "trello",
+      "name": "Trello",
+      "homepage": "https://trello.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Trello platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://www.atlassian.com/legal/atlassian-customer-agreement"],
+        "notes": "Service/source restrictions in section 2.2; judgment limited to hosted Trello, excluding extensions.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Standard",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 5,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "One user; monthly equivalent with annual billing.",
+          "notes": "Published plan component; tax, negotiated discounts and add-ons excluded.",
+          "sourceUrl": "https://trello.com/pricing"
+        },
+        {
+          "plan": "Premium",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 10,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "One user; monthly equivalent with annual billing.",
+          "notes": "Published plan component; tax, negotiated discounts and add-ons excluded.",
+          "sourceUrl": "https://trello.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "asana",
+      "name": "Asana",
+      "homepage": "https://asana.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Asana platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": [
+          "https://asana.com/terms/subscriber-agreement",
+          "https://asana.com/pricing"
+        ],
+        "notes": "Research judgment for the hosted work-management service: sections 2.2 and 2.4 limit access and restrict copying, modification and reverse engineering. Separately licensed software, SDKs and customer content are outside this classification.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Starter",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 10.99,
+          "currency": null,
+          "currencySymbol": "$",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "One user, monthly equivalent with yearly billing.",
+          "notes": "Dollar-symbol observation; ISO currency remains unconfirmed. Seat minimums, taxes and additional AI services can affect total cost.",
+          "sourceUrl": "https://asana.com/pricing",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Advanced",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 24.99,
+          "currency": null,
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-20",
+          "currencySymbol": "$",
+          "configuration": "One user; monthly equivalent with annual billing.",
+          "notes": "Reconfirmed the displayed dollar amount and yearly billing; ISO currency remains unconfirmed. Taxes, seat minimums and AI add-ons require separate configuration.",
+          "sourceUrl": "https://asana.com/pricing"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://asana.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "jira-cloud",
+      "name": "Jira",
+      "homepage": "https://www.atlassian.com/software/jira",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Jira platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://www.atlassian.com/legal/atlassian-customer-agreement"],
+        "notes": "Service/source restrictions in section 2.2; judgment limited to Jira Cloud, excluding Data Center and plugins.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Premium",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 15.56,
+          "currency": null,
+          "unit": "user",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "Calculator observation without confirmed user tier or billing selection.",
+          "notes": "Do not treat a displayed tier rate as a universal per-user quote; currency and configuration require review.",
+          "sourceUrl": "https://www.atlassian.com/en/software/jira/pricing"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://www.atlassian.com/en/software/jira/pricing"
+        }
+      ]
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "homepage": "https://linear.app/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Linear platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://linear.app/terms"],
+        "notes": "Reviewed restrictions on source discovery, modification and redistribution; excludes separately licensed tools.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Business",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 16,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "configuration": "One user; monthly equivalent with annual billing.",
+          "notes": "Standard published rate; terms default to USD unless the order specifies otherwise. Optional AI usage charges excluded.",
+          "sourceUrl": "https://linear.app/pricing",
+          "currencyEvidenceUrl": "https://linear.app/terms"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://linear.app/pricing"
+        }
+      ]
+    },
+    {
+      "id": "miro",
+      "name": "Miro",
+      "homepage": "https://miro.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Miro platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://miro.com/legal/terms-of-service/"],
+        "notes": "Reviewed service restrictions in section 2.9; excludes separately licensed integrations.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Business",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 20,
+          "currency": null,
+          "unit": "member",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One member; monthly equivalent with annual billing.",
+          "notes": "Dollar-symbol observation; confirm ISO currency before comparison. Tax and add-ons excluded.",
+          "sourceUrl": "https://miro.com/pricing/"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://miro.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "zapier",
+      "name": "Zapier",
+      "homepage": "https://zapier.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Zapier cloud automation service, excluding separately licensed SDKs, integrations and customer workflows.",
+        "evidenceUrls": ["https://zapier.com/legal/terms-of-service"],
+        "notes": "Scoped research judgment: the April 9, 2026 service terms define the cloud automation platform and restrict reverse engineering, modification and redistribution in section 4. This is not a classification of all Zapier-authored code.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Professional",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 19.99,
+          "currency": "USD",
+          "unit": "subscription",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-20",
+          "configuration": "Professional starting-price observation; USD is explicit, but the selected task allowance and payment cycle remain unconfirmed.",
+          "notes": "The page lists multiple task tiers and payment options. Do not associate this starting amount with a specific allowance or rank it until that configuration is established.",
+          "sourceUrl": "https://zapier.com/pricing",
+          "currencyEvidenceUrl": "https://zapier.com/pricing"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://zapier.com/pricing"
+        },
+        {
+          "plan": "Pay-per-task overage",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "configuration": "Optional extra task consumption after a paid plan reaches its included task allowance.",
+          "notes": "The applicable rate depends on the plan and billing cycle. This record does not assert a fixed total or a specific task-tier starting price.",
+          "sourceUrl": "https://help.zapier.com/hc/en-us/articles/15279018245901-How-pay-per-task-billing-works-in-Zapier",
+          "reviewedOn": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "typeform",
+      "name": "Typeform",
+      "homepage": "https://www.typeform.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Typeform hosted form and response-collection service, excluding separately licensed developer libraries and customer forms or response data.",
+        "evidenceUrls": [
+          "https://www.typeform.com/legal/service-terms-and-conditions",
+          "https://help.typeform.com/hc/en-us/articles/360060585211-Basic-plan"
+        ],
+        "notes": "Scoped research judgment: section 2(c) grants limited subscription access; section 3(b) restricts reverse engineering and service reproduction. This classification does not extend to all developer tools or customer content.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Basic",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 39,
+          "currency": "USD",
+          "unit": "account",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-20",
+          "configuration": "Top pricing section: one user and 100 responses/month. Other page sections show different Basic figures.",
+          "notes": "The current page still has conflicting Basic amounts. Official Basic-plan help confirms active pricing experiments; this does not establish which offer or billing cycle applies. Preserve the pending observation and withhold its amount.",
+          "sourceUrl": "https://www.typeform.com/pricing",
+          "conflictingObservationUrl": "https://www.typeform.com/pricing",
+          "currencyEvidenceUrl": "https://www.typeform.com/pricing"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://www.typeform.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "postman",
+      "name": "Postman",
+      "homepage": "https://www.postman.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Postman hosted API platform and associated subscription functionality. Separately licensed OSS, Newman, SDKs and customer collections or generated code are excluded.",
+        "evidenceUrls": [
+          "https://www.postman.com/legal/terms/",
+          "https://www.postman.com/legal/postman-acceptable-use-policy/"
+        ],
+        "notes": "Scoped research judgment: June 8, 2026 terms grant limited subscription access and executable-code rights; the incorporated AUP restricts source discovery and service resale. OSS has separate licenses. Section 7.1 specifies United States Dollars. Individually negotiated agreements may differ.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Solo",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 9,
+          "currency": "USD",
+          "unit": "account",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Solo subscription for one individual; monthly equivalent billed annually.",
+          "notes": "Includes a base AI allowance; extra usage is separate. This account fee is not a Team seat price.",
+          "sourceUrl": "https://www.postman.com/pricing/",
+          "currencyEvidenceUrl": "https://www.postman.com/legal/terms/",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Team",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 19,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Base subscription for one Team user; monthly equivalent billed annually.",
+          "notes": "400 AI credits per user per month; usage and security add-ons may cost extra. Retired Basic/Professional plans are not used.",
+          "sourceUrl": "https://www.postman.com/pricing/",
+          "currencyEvidenceUrl": "https://www.postman.com/legal/terms/",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://www.postman.com/pricing/"
+        },
+        {
+          "plan": "AI and usage overages",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "configuration": "Additional metered consumption beyond the selected subscription allowance.",
+          "notes": "Total depends on enabled usage and plan-specific rates; base subscriptions do not represent the complete bill.",
+          "sourceUrl": "https://www.postman.com/pricing/",
+          "reviewedOn": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "auth0",
+      "name": "Auth0",
+      "homepage": "https://auth0.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The paid Auth0 platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://auth0.com/pricing"],
+        "notes": "Official paid offering located; applicable source-availability terms still require review. Pricing evidence alone does not verify closed-source classification.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Professional — B2C 500 MAU",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 240,
+          "currency": null,
+          "unit": "account",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "B2C page observation for up to 500 monthly active users; excludes M2M and other add-ons.",
+          "notes": "Confirm currency, billing cycle and B2C/B2B selection before comparison.",
+          "sourceUrl": "https://auth0.com/pricing"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://auth0.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "algolia",
+      "name": "Algolia",
+      "homepage": "https://www.algolia.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The paid Algolia platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://www.algolia.com/pricing"],
+        "notes": "Official paid offering located; applicable source-availability terms still require review. Pricing evidence alone does not verify closed-source classification.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Grow",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "requests-records-and-other-usage",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Workload, selected services and region not yet specified.",
+          "notes": "Free allowances precede paid consumption. A zero starting display is not a fixed total.",
+          "sourceUrl": "https://www.algolia.com/pricing"
+        },
+        {
+          "plan": "Elevate",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://www.algolia.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "retool",
+      "name": "Retool",
+      "homepage": "https://retool.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The Retool-hosted paid application-building platform. Customer-hosted distribution, separately licensed libraries, third-party services and customer apps or data are outside this classification.",
+        "evidenceUrls": [
+          "https://docs.retool.com/legal/customer-terms-of-service",
+          "https://docs.retool.com/legal/master-subscription-agreement"
+        ],
+        "notes": "Scoped research judgment: customer terms grant limited object-code use; MSA section 3.3 restricts platform reverse engineering and modification. Open-source components and customer-built apps retain separate rights. Negotiated order forms may differ.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Business — builder",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 50,
+          "currency": null,
+          "unit": "builder",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One builder; monthly equivalent with annual billing.",
+          "notes": "Dollar-symbol observation; confirm ISO currency before comparison. Tax and add-ons excluded.",
+          "sourceUrl": "https://retool.com/pricing"
+        },
+        {
+          "plan": "Business — internal user",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 15,
+          "currency": null,
+          "unit": "internal-user",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One internal-user; monthly equivalent with annual billing.",
+          "notes": "Dollar-symbol observation; confirm ISO currency before comparison. Tax and add-ons excluded.",
+          "sourceUrl": "https://retool.com/pricing"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://retool.com/pricing"
+        },
+        {
+          "plan": "Team — builder (EU)",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 9,
+          "currency": "EUR",
+          "unit": "builder",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "European regional page; one role-specific seat, monthly equivalent billed annually.",
+          "notes": "Euro-denominated base component. Other roles, usage and tax are separate; no USD conversion or complete-team estimate.",
+          "sourceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "currencyEvidenceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Team — internal user (EU)",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 5,
+          "currency": "EUR",
+          "unit": "internal-user",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "European regional page; one role-specific seat, monthly equivalent billed annually.",
+          "notes": "Euro-denominated base component. Other roles, usage and tax are separate; no USD conversion or complete-team estimate.",
+          "sourceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "currencyEvidenceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Business — builder (EU)",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 46,
+          "currency": "EUR",
+          "unit": "builder",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "European regional page; one role-specific seat, monthly equivalent billed annually.",
+          "notes": "Euro-denominated base component. Other roles, usage and tax are separate; no USD conversion or complete-team estimate.",
+          "sourceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "currencyEvidenceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Business — internal user (EU)",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 14,
+          "currency": "EUR",
+          "unit": "internal-user",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "European regional page; one role-specific seat, monthly equivalent billed annually.",
+          "notes": "Euro-denominated base component. Other roles, usage and tax are separate; no USD conversion or complete-team estimate.",
+          "sourceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "currencyEvidenceUrl": "https://retool.com/en-EU/pricing?path=pricing",
+          "reviewedOn": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "intercom",
+      "name": "Intercom",
+      "homepage": "https://www.intercom.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Intercom platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://www.intercom.com/legal/terms-and-policies"],
+        "notes": "Reviewed restrictions on source access and modification in section 2.7; excludes client SDKs.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Expert — Full seat",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 132,
+          "currency": null,
+          "unit": "full-seat",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One paid Full seat; billing selection requires review.",
+          "notes": "Seat component only. Fin outcomes and messaging channels can add usage charges; confirm currency and cycle.",
+          "sourceUrl": "https://www.intercom.com/pricing"
+        },
+        {
+          "plan": "Complete support bill",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "seats-outcomes-and-channels",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Requires Full-seat count, selected plan, Fin outcomes and messaging volumes.",
+          "notes": "Official model combines plan seats and usage. A seat rate is not an all-in bill.",
+          "sourceUrl": "https://www.intercom.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "zendesk",
+      "name": "Zendesk",
+      "homepage": "https://www.zendesk.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid Zendesk platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": [
+          "https://www.zendesk.com/company/agreements-and-terms/zendesk-customer-agreement/"
+        ],
+        "notes": "Reviewed customer-agreement restrictions on source access and service modification; excludes SDKs and integrations.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Suite Professional",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 115,
+          "currency": null,
+          "unit": "agent",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One agent, annual billing; published Suite Professional scope.",
+          "notes": "Confirm ISO currency. AI usage, telephony, implementation and other extras can affect the total.",
+          "sourceUrl": "https://www.zendesk.com/pricing/"
+        },
+        {
+          "plan": "Suite Enterprise + Copilot",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://www.zendesk.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "clickup",
+      "name": "ClickUp",
+      "homepage": "https://clickup.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid ClickUp platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://clickup.com/terms", "https://clickup.com/pricing"],
+        "notes": "Research judgment for the hosted ClickUp service: section 1.5 restricts reverse engineering and decompilation. This does not classify separately licensed integrations or customer-created content.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Unlimited",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 7,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Base subscription for one user, monthly equivalent with yearly billing.",
+          "notes": "Excludes taxes and separately charged features; not a complete deployment total.",
+          "sourceUrl": "https://clickup.com/pricing",
+          "currencyEvidenceUrl": "https://help.clickup.com/hc/en-us/articles/6303314345623-Upgrade-your-plan",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Business",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 12,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Base subscription for one user, monthly equivalent with yearly billing.",
+          "notes": "Official help confirms USD billing. AI credits, extra guests, taxes and add-ons can increase the bill.",
+          "sourceUrl": "https://clickup.com/pricing",
+          "currencyEvidenceUrl": "https://help.clickup.com/hc/en-us/articles/6303314345623-Upgrade-your-plan",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://clickup.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "monday",
+      "name": "monday Work Management",
+      "homepage": "https://monday.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The paid monday Work Management platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://monday.com/pricing"],
+        "notes": "Official paid offering located; applicable source-availability terms still require review. Pricing evidence alone does not verify closed-source classification.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Work Management — paid configuration",
+          "kind": "unavailable",
+          "verification": "needs-review",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Shared pricing page contains several product tabs and team-size calculators.",
+          "notes": "Product tab, seat tier, ISO currency and full billing context need a rendered-page review; do not reuse a CRM or Service quote.",
+          "sourceUrl": "https://monday.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "homepage": "https://vercel.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The paid Vercel platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://vercel.com/pricing"],
+        "notes": "Official paid offering located; applicable source-availability terms still require review. Pricing evidence alone does not verify closed-source classification.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Pro — developer seat",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 20,
+          "currency": null,
+          "unit": "developer-seat",
+          "period": "month",
+          "billing": "monthly",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "One developer-seat; monthly billing.",
+          "notes": "Seat component only; Pro includes usage credit and may incur resource charges. Confirm ISO currency.",
+          "sourceUrl": "https://vercel.com/pricing"
+        },
+        {
+          "plan": "Pro — complete bill",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "developer-seats-and-resources",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Requires team size, deployment region and resource consumption.",
+          "notes": "Subscription/seat costs and resource usage need a workload estimate.",
+          "sourceUrl": "https://vercel.com/pricing"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-19",
+          "configuration": "Custom enterprise scope and agreement.",
+          "notes": "Official page requests sales contact; no quote has been requested.",
+          "sourceUrl": "https://vercel.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "homepage": "https://www.netlify.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The paid Netlify platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://www.netlify.com/pricing/"],
+        "notes": "Official paid offering located; applicable source-availability terms still require review. Pricing evidence alone does not verify closed-source classification.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Pro — base credit tier",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 20,
+          "currency": null,
+          "unit": "team",
+          "period": "month",
+          "billing": "monthly",
+          "reviewedOn": "2026-10-19",
+          "currencySymbol": "$",
+          "configuration": "Base 3000-credit Pro tier with unlimited members; higher tiers and recharge excluded.",
+          "notes": "Credit-based pricing; not a per-developer fee. Confirm ISO currency before ranking.",
+          "sourceUrl": "https://www.netlify.com/pricing/"
+        },
+        {
+          "plan": "Pro — complete bill",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "plan-tier-and-credits",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Requires credit tier, deploys, compute, bandwidth, requests and recharge choice.",
+          "notes": "Optional recharge or higher tiers change the total; original seat-based pricing is not assumed.",
+          "sourceUrl": "https://www.netlify.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "heroku",
+      "name": "Heroku",
+      "homepage": "https://www.heroku.com/",
+      "reviewedOn": "2026-10-19",
+      "sourceAvailability": {
+        "classification": "proprietary-service-candidate",
+        "verification": "needs-review",
+        "scope": "The paid Heroku platform/service, excluding separately licensed SDKs, agents, connectors and open components.",
+        "evidenceUrls": ["https://www.heroku.com/pricing"],
+        "notes": "Official paid offering located; applicable source-availability terms still require review. Pricing evidence alone does not verify closed-source classification.",
+        "reviewedOn": "2026-10-19"
+      },
+      "pricing": [
+        {
+          "plan": "Dynos and platform services",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": "dyno-runtime-and-addons",
+          "period": null,
+          "billing": "usage-based",
+          "reviewedOn": "2026-10-19",
+          "configuration": "Select dyno type, count, active time, databases and add-ons.",
+          "notes": "Published monthly dyno rates describe compute components, not a complete hosted deployment bill.",
+          "sourceUrl": "https://www.heroku.com/pricing"
+        }
+      ]
+    },
+    {
+      "id": "uxpin",
+      "name": "UXPin",
+      "homepage": "https://www.uxpin.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid hosted UXPin service, excluding separately licensed libraries, integrations and customer-created content.",
+        "evidenceUrls": ["https://www.uxpin.com/tos", "https://www.uxpin.com/pricing"],
+        "notes": "Research judgment: section 2 limits service access and restricts code copying, modification and reverse engineering. Section 4.2 specifies U.S. dollars. This does not classify generated output or third-party component libraries.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Core",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 29,
+          "currency": "USD",
+          "unit": "seat",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "One Core seat, monthly equivalent billed yearly; base included AI allowance.",
+          "notes": "Additional AI credits and tax excluded. Monthly billing has a different price.",
+          "sourceUrl": "https://www.uxpin.com/pricing",
+          "currencyEvidenceUrl": "https://www.uxpin.com/tos",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Growth",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 40,
+          "currency": "USD",
+          "unit": "seat",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "One Growth seat, monthly equivalent billed yearly; base included AI allowance.",
+          "notes": "Additional AI credits and custom enterprise scope excluded.",
+          "sourceUrl": "https://www.uxpin.com/pricing",
+          "currencyEvidenceUrl": "https://www.uxpin.com/tos",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "configuration": "Custom enterprise configuration.",
+          "notes": "The page directs customers to sales; no quote requested.",
+          "sourceUrl": "https://www.uxpin.com/pricing",
+          "reviewedOn": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "twist",
+      "name": "Twist",
+      "homepage": "https://twist.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid hosted Twist service, excluding separately licensed libraries, integrations and customer-created content.",
+        "evidenceUrls": ["https://www.todoist.com/terms-of-service", "https://twist.com/pricing"],
+        "notes": "The terms linked by Twist redirect to Todoist and explicitly include Twist and Twist Unlimited. The limited service license and source-discovery restrictions support this scoped research classification.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Unlimited",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 6,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "unknown",
+          "configuration": "Observed US$6 per user per month; members and multi-channel guests are billable.",
+          "notes": "USD is explicit, but the extracted billing toggle does not identify the selected yearly/monthly cycle. Single-channel guests are free. Keep this amount out of ranking until the cycle is verified.",
+          "sourceUrl": "https://twist.com/pricing",
+          "reviewedOn": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "basecamp",
+      "name": "Basecamp",
+      "homepage": "https://basecamp.com/",
+      "reviewedOn": "2026-10-20",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid hosted Basecamp service, excluding separately licensed libraries, integrations and customer-created content.",
+        "evidenceUrls": ["https://37signals.com/policies/terms", "https://basecamp.com/pricing"],
+        "notes": "Research judgment for hosted Basecamp: service terms restrict copying or reuse of application code and duplication or resale of service access without permission. This does not classify 37signals open-source projects.",
+        "reviewedOn": "2026-10-20"
+      },
+      "pricing": [
+        {
+          "plan": "Freelancer",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 25,
+          "currency": null,
+          "currencySymbol": "$",
+          "unit": "account",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Annual billing; up to 3 active projects, 5 GB storage and 20 users.",
+          "notes": "ISO currency remains unconfirmed; extra storage and tax excluded.",
+          "sourceUrl": "https://basecamp.com/pricing",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Studio",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 59,
+          "currency": null,
+          "currencySymbol": "$",
+          "unit": "account",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Annual billing; up to 10 active projects, 25 GB storage and unlimited users.",
+          "notes": "ISO currency remains unconfirmed; account fee, not per-user pricing.",
+          "sourceUrl": "https://basecamp.com/pricing",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Pro",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 99,
+          "currency": null,
+          "currencySymbol": "$",
+          "unit": "account",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Annual billing; up to 25 active projects, 100 GB storage and unlimited users.",
+          "notes": "ISO currency remains unconfirmed; extra storage and tax excluded.",
+          "sourceUrl": "https://basecamp.com/pricing",
+          "reviewedOn": "2026-10-20"
+        },
+        {
+          "plan": "Unlimited",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 299,
+          "currency": null,
+          "currencySymbol": "$",
+          "unit": "account",
+          "period": "month",
+          "billing": "annual",
+          "configuration": "Annual billing; unlimited projects and users, 1000 GB storage.",
+          "notes": "ISO currency remains unconfirmed; additional storage and tax excluded. The plan heading is used; a rounded FAQ amount is not a separate quote.",
+          "sourceUrl": "https://basecamp.com/pricing",
+          "reviewedOn": "2026-10-20"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "appflowy-notion",
+      "projectId": "appflowy",
+      "productId": "notion",
+      "verification": "author-claimed",
+      "discoveryUrl": "https://openalternative.co/appflowy",
+      "evidenceUrls": ["https://github.com/AppFlowy-IO/AppFlowy", "https://www.notion.com/pricing"],
+      "overlap": "Documents, wikis, structured information, and collaborative workspaces.",
+      "limitations": "The project explicitly positions itself against Notion; this does not establish complete feature parity, migration compatibility, or equivalent AI functionality.",
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "penpot-figma",
+      "projectId": "penpot",
+      "productId": "figma",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://openalternative.co/penpot",
+      "evidenceUrls": ["https://github.com/penpot/penpot", "https://www.figma.com/pricing/"],
+      "overlap": "Collaborative interface design, prototyping, and developer handoff.",
+      "limitations": "Researcher inference from overlapping published capabilities. File interchange, plugins, AI tools, and design-system behavior require separate migration checks.",
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "zulip-slack",
+      "projectId": "zulip",
+      "productId": "slack",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://openalternative.co/zulip",
+      "evidenceUrls": ["https://github.com/zulip/zulip", "https://slack.com/pricing"],
+      "overlap": "Persistent team messaging, searchable conversations, and collaboration.",
+      "limitations": "Researcher inference. Zulip's topic organization differs from Slack; bot, integration, history-import, and administration compatibility is not established.",
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "uptime-kuma-uptimerobot",
+      "projectId": "uptime-kuma",
+      "productId": "uptimerobot",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://openalternative.co/uptime-kuma",
+      "evidenceUrls": [
+        "https://github.com/louislam/uptime-kuma",
+        "https://uptimerobot.com/pricing/"
+      ],
+      "overlap": "Endpoint uptime checks, alerts, and status pages.",
+      "limitations": "Researcher inference. Self-hosted and vendor-operated monitoring have different vantage points, operations, intervals, and notification allowances.",
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "supabase-firebase",
+      "projectId": "supabase",
+      "productId": "firebase",
+      "verification": "author-claimed",
+      "discoveryUrl": "https://openalternative.co/supabase",
+      "evidenceUrls": [
+        "https://github.com/supabase/supabase",
+        "https://firebase.google.com/pricing"
+      ],
+      "overlap": "Managed application backends including database access, authentication, and storage.",
+      "limitations": "Supabase describes Firebase-like functionality and explicitly does not claim a one-to-one mapping. Database models, APIs, and service bundles differ.",
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "grafana-datadog",
+      "projectId": "grafana-oss",
+      "productId": "datadog",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://openalternative.co/grafana",
+      "evidenceUrls": ["https://github.com/grafana/grafana", "https://www.datadoghq.com/pricing/"],
+      "overlap": "Monitoring dashboards and observability workflows.",
+      "limitations": "Researcher inference with partial scope. Grafana is not the entire surrounding metrics/logs stack, and the sampled Datadog infrastructure SKU does not cover every observability product.",
+      "reviewedOn": "2026-10-17"
+    },
+    {
+      "id": "appflowy-confluence-cloud",
+      "projectId": "appflowy",
+      "productId": "confluence-cloud",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.atlassian.com/en/software/confluence/pricing",
+      "evidenceUrls": [
+        "https://github.com/AppFlowy-IO/AppFlowy",
+        "https://www.atlassian.com/en/software/confluence/pricing"
+      ],
+      "overlap": "Collaborative documents, team wikis and structured workspace information.",
+      "limitations": "Published-feature comparison only. AppFlowy local/offline workflows, block databases, Jira integrations and enterprise administration are not feature-equivalent."
+    },
+    {
+      "id": "penpot-sketch",
+      "projectId": "penpot",
+      "productId": "sketch",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.sketch.com/pricing/",
+      "evidenceUrls": ["https://github.com/penpot/penpot", "https://www.sketch.com/pricing/"],
+      "overlap": "Interface design, prototyping, shared design assets and developer handoff.",
+      "limitations": "Sketch authoring uses a native Mac editor; Penpot is browser-based and self-hostable. File formats, plugins and operating-system requirements differ."
+    },
+    {
+      "id": "zulip-microsoft-teams",
+      "projectId": "zulip",
+      "productId": "microsoft-teams",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options",
+      "evidenceUrls": [
+        "https://github.com/zulip/zulip",
+        "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options"
+      ],
+      "overlap": "Team chat, searchable collaboration and file sharing.",
+      "limitations": "Topic/thread organization, identity administration, integrations and migration differ. Microsoft 365 bundles include capabilities beyond chat."
+    },
+    {
+      "id": "uptime-kuma-pingdom",
+      "projectId": "uptime-kuma",
+      "productId": "pingdom",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.pingdom.com/pricing/",
+      "evidenceUrls": [
+        "https://github.com/louislam/uptime-kuma",
+        "https://www.pingdom.com/pricing/"
+      ],
+      "overlap": "Uptime checks, endpoint alerts and public status reporting.",
+      "limitations": "Vendor-operated external probes differ from self-hosted checks. Monitor count, intervals and alert allowances need matching; real-user monitoring is additional scope."
+    },
+    {
+      "id": "grafana-new-relic",
+      "projectId": "grafana-oss",
+      "productId": "new-relic",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://newrelic.com/pricing",
+      "evidenceUrls": ["https://grafana.com/oss/grafana/", "https://newrelic.com/pricing"],
+      "overlap": "Telemetry visualization, dashboards, alerting and observability investigation.",
+      "limitations": "Partial workflow overlap only. Grafana is a visualization layer; collectors, storage, retention and the complete surrounding deployment must be scoped separately."
+    },
+    {
+      "id": "grafana-dynatrace",
+      "projectId": "grafana-oss",
+      "productId": "dynatrace",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.dynatrace.com/pricing/",
+      "evidenceUrls": ["https://grafana.com/oss/grafana/", "https://www.dynatrace.com/pricing/"],
+      "overlap": "Monitoring dashboards and application/infrastructure observability workflows.",
+      "limitations": "Partial workflow overlap. Automated instrumentation and storage scope differ; source classification remains pending, and hourly consumption cannot be treated as a fixed subscription."
+    },
+    {
+      "id": "baserow-airtable",
+      "projectId": "baserow",
+      "productId": "airtable",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/baserow/baserow",
+      "evidenceUrls": ["https://github.com/baserow/baserow", "https://airtable.com/pricing"],
+      "overlap": "Structured tables, linked records, views and collaborative no-code databases.",
+      "limitations": "Community/paid limits, automation and app-building features differ.",
+      "discoveryEvidenceIds": ["5e06c2233b1271738df09190c609db0dd00aaf1b542b701b92c3e13b3792abac"]
+    },
+    {
+      "id": "activepieces-zapier",
+      "projectId": "activepieces",
+      "productId": "zapier",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/activepieces/activepieces",
+      "evidenceUrls": [
+        "https://github.com/activepieces/activepieces",
+        "https://zapier.com/pricing"
+      ],
+      "overlap": "App integrations, triggers and multi-step workflow automation.",
+      "limitations": "Connector coverage, task accounting and hosted execution behavior differ.",
+      "discoveryEvidenceIds": ["ff76996d2e756403faa09adbcac53b2fa4914115f9980cf71b9c2bdb6c7e7b00"]
+    },
+    {
+      "id": "affine-notion",
+      "projectId": "affine",
+      "productId": "notion",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/toeverything/AFFiNE",
+      "evidenceUrls": ["https://github.com/toeverything/AFFiNE", "https://www.notion.com/pricing"],
+      "overlap": "Collaborative documents, knowledge organization and tables.",
+      "limitations": "Offline behavior, AI, permissions and block/database compatibility differ.",
+      "discoveryEvidenceIds": [
+        "2378b26be5e9d6eabc29dc3981b6fcf1a45d33bb001ee23fd3296cd72e388bb1",
+        "3dc71944a6baaffb0e296fa1ce34471acfb0b406d877b5d87fb2c72b6e6914a5"
+      ]
+    },
+    {
+      "id": "affine-miro",
+      "projectId": "affine",
+      "productId": "miro",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/toeverything/AFFiNE",
+      "evidenceUrls": ["https://github.com/toeverything/AFFiNE", "https://miro.com/pricing/"],
+      "overlap": "Whiteboard canvas and visual collaboration.",
+      "limitations": "Diagramming, facilitation, integrations and enterprise controls differ.",
+      "discoveryEvidenceIds": [
+        "2378b26be5e9d6eabc29dc3981b6fcf1a45d33bb001ee23fd3296cd72e388bb1",
+        "3dc71944a6baaffb0e296fa1ce34471acfb0b406d877b5d87fb2c72b6e6914a5"
+      ]
+    },
+    {
+      "id": "affine-confluence-cloud",
+      "projectId": "affine",
+      "productId": "confluence-cloud",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.atlassian.com/en/software/confluence/pricing",
+      "evidenceUrls": [
+        "https://github.com/toeverything/AFFiNE",
+        "https://www.atlassian.com/en/software/confluence/pricing"
+      ],
+      "overlap": "Team documentation, knowledge organization and collaboration.",
+      "limitations": "Partial documentation overlap; wiki administration, Jira integration and offline support differ."
+    },
+    {
+      "id": "focalboard-trello",
+      "projectId": "focalboard",
+      "productId": "trello",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/mattermost-community/focalboard",
+      "evidenceUrls": [
+        "https://github.com/mattermost-community/focalboard",
+        "https://trello.com/pricing"
+      ],
+      "overlap": "Boards, cards, task status and team project tracking.",
+      "limitations": "Standalone project is currently unmaintained; automation, integrations and migration differ.",
+      "discoveryEvidenceIds": ["8774974c3ac8a754aff8ddfa0b8dcf7c0d4512508d4199013d681f13c8f5a6da"]
+    },
+    {
+      "id": "focalboard-notion",
+      "projectId": "focalboard",
+      "productId": "notion",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/mattermost-community/focalboard",
+      "evidenceUrls": [
+        "https://github.com/mattermost-community/focalboard",
+        "https://www.notion.com/pricing"
+      ],
+      "overlap": "Board/database-style organization and collaborative task tracking.",
+      "limitations": "Limited task/board overlap; not a replacement for every document or AI feature. Standalone project is unmaintained.",
+      "discoveryEvidenceIds": ["8774974c3ac8a754aff8ddfa0b8dcf7c0d4512508d4199013d681f13c8f5a6da"]
+    },
+    {
+      "id": "focalboard-asana",
+      "projectId": "focalboard",
+      "productId": "asana",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/mattermost-community/focalboard",
+      "evidenceUrls": [
+        "https://github.com/mattermost-community/focalboard",
+        "https://asana.com/pricing"
+      ],
+      "overlap": "Tasks, project tracking and collaborative work organization.",
+      "limitations": "Portfolio, workload, automation and integrations differ; standalone project is unmaintained.",
+      "discoveryEvidenceIds": ["8774974c3ac8a754aff8ddfa0b8dcf7c0d4512508d4199013d681f13c8f5a6da"]
+    },
+    {
+      "id": "leantime-clickup",
+      "projectId": "leantime",
+      "productId": "clickup",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/Leantime/leantime",
+      "evidenceUrls": ["https://github.com/Leantime/leantime", "https://clickup.com/pricing"],
+      "overlap": "Goals, task planning and team project management.",
+      "limitations": "Goals-first workflows, permissions, integrations and paid plugin boundaries differ.",
+      "discoveryEvidenceIds": ["c6778f0c70594cba91c020e0ef72eabca0f0e50a9071461eac364efbba7aef92"]
+    },
+    {
+      "id": "leantime-monday",
+      "projectId": "leantime",
+      "productId": "monday",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/Leantime/leantime",
+      "evidenceUrls": ["https://github.com/Leantime/leantime", "https://monday.com/pricing"],
+      "overlap": "Project planning, task tracking and team work management.",
+      "limitations": "Work Management scope only; not monday CRM or Service. User tiers and plugins differ.",
+      "discoveryEvidenceIds": ["c6778f0c70594cba91c020e0ef72eabca0f0e50a9071461eac364efbba7aef92"]
+    },
+    {
+      "id": "leantime-asana",
+      "projectId": "leantime",
+      "productId": "asana",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/Leantime/leantime",
+      "evidenceUrls": ["https://github.com/Leantime/leantime", "https://asana.com/pricing"],
+      "overlap": "Goals, project planning and team task coordination.",
+      "limitations": "Templates, portfolio planning, AI and administration are not feature-equivalent.",
+      "discoveryEvidenceIds": ["c6778f0c70594cba91c020e0ef72eabca0f0e50a9071461eac364efbba7aef92"]
+    },
+    {
+      "id": "openproject-jira-cloud",
+      "projectId": "openproject",
+      "productId": "jira-cloud",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/opf/openproject",
+      "evidenceUrls": [
+        "https://github.com/opf/openproject",
+        "https://www.atlassian.com/en/software/jira/pricing"
+      ],
+      "overlap": "Work packages, issue tracking, agile planning and project coordination.",
+      "limitations": "Cloud operation, app ecosystem, automation and migration formats differ.",
+      "discoveryEvidenceIds": ["0fae9c848af66877c789b5cbcebf1b3cfb6a203671d00db0f476203b2081921f"]
+    },
+    {
+      "id": "openproject-monday",
+      "projectId": "openproject",
+      "productId": "monday",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/opf/openproject",
+      "evidenceUrls": ["https://github.com/opf/openproject", "https://monday.com/pricing"],
+      "overlap": "Project scheduling, work tracking and cross-team planning.",
+      "limitations": "Work Management scope only; user licensing, workflow automation and enterprise options differ.",
+      "discoveryEvidenceIds": ["0fae9c848af66877c789b5cbcebf1b3cfb6a203671d00db0f476203b2081921f"]
+    },
+    {
+      "id": "openproject-asana",
+      "projectId": "openproject",
+      "productId": "asana",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/opf/openproject",
+      "evidenceUrls": ["https://github.com/opf/openproject", "https://asana.com/pricing"],
+      "overlap": "Project planning, tasks, timelines and team coordination.",
+      "limitations": "Feature bundles, portfolio depth, roles and migration need separate checks.",
+      "discoveryEvidenceIds": ["0fae9c848af66877c789b5cbcebf1b3cfb6a203671d00db0f476203b2081921f"]
+    },
+    {
+      "id": "openproject-linear",
+      "projectId": "openproject",
+      "productId": "linear",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://linear.app/pricing",
+      "evidenceUrls": ["https://github.com/opf/openproject", "https://linear.app/pricing"],
+      "overlap": "Issues, projects and team planning workflows.",
+      "limitations": "Partial planning overlap; software-team workflows and heavyweight scheduling capabilities differ."
+    },
+    {
+      "id": "hoppscotch-postman",
+      "projectId": "hoppscotch",
+      "productId": "postman",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.postman.com/pricing/",
+      "evidenceUrls": [
+        "https://github.com/hoppscotch/hoppscotch",
+        "https://www.postman.com/pricing/"
+      ],
+      "overlap": "API requests, collections, testing and collaborative development.",
+      "limitations": "Protocol coverage, scripts, hosted monitors and enterprise administration differ."
+    },
+    {
+      "id": "formbricks-typeform",
+      "projectId": "formbricks",
+      "productId": "typeform",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.typeform.com/pricing",
+      "evidenceUrls": [
+        "https://github.com/formbricks/formbricks",
+        "https://www.typeform.com/pricing"
+      ],
+      "overlap": "Link surveys, conditional forms and response collection.",
+      "limitations": "Survey targeting, response accounting, integrations and enterprise components differ."
+    },
+    {
+      "id": "chatwoot-intercom",
+      "projectId": "chatwoot",
+      "productId": "intercom",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/chatwoot/chatwoot",
+      "evidenceUrls": ["https://github.com/chatwoot/chatwoot", "https://www.intercom.com/pricing"],
+      "overlap": "Customer conversations, shared inboxes, live chat and support workflows.",
+      "limitations": "AI outcomes, outbound channels, help centers and commercial features have different scope and cost.",
+      "discoveryEvidenceIds": ["62f8c1ba4682cc7255767e2102be06085307cedac6e3f64096435ef77f5ac622"]
+    },
+    {
+      "id": "chatwoot-zendesk",
+      "projectId": "chatwoot",
+      "productId": "zendesk",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/chatwoot/chatwoot",
+      "evidenceUrls": ["https://github.com/chatwoot/chatwoot", "https://www.zendesk.com/pricing/"],
+      "overlap": "Shared support conversations, agent workflows and customer messaging.",
+      "limitations": "Contact center, ticketing depth, AI, integrations and enterprise controls differ.",
+      "discoveryEvidenceIds": ["62f8c1ba4682cc7255767e2102be06085307cedac6e3f64096435ef77f5ac622"]
+    },
+    {
+      "id": "appsmith-retool",
+      "projectId": "appsmith",
+      "productId": "retool",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://retool.com/pricing",
+      "evidenceUrls": ["https://github.com/appsmithorg/appsmith", "https://retool.com/pricing"],
+      "overlap": "Internal business apps, admin interfaces and database/API connections.",
+      "limitations": "Builder/internal/external user models and proprietary enterprise capabilities differ."
+    },
+    {
+      "id": "coolify-vercel",
+      "projectId": "coolify",
+      "productId": "vercel",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/coollabsio/coolify",
+      "evidenceUrls": ["https://github.com/coollabsio/coolify", "https://vercel.com/pricing"],
+      "overlap": "Source-based deployment and application hosting workflows.",
+      "limitations": "Self-managed servers differ from managed edge/serverless infrastructure; resource use is not equivalent.",
+      "discoveryEvidenceIds": ["016a54591b171302cdd692bffd5aee3275f7e1493588b0be99e98788071a574c"]
+    },
+    {
+      "id": "coolify-netlify",
+      "projectId": "coolify",
+      "productId": "netlify",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/coollabsio/coolify",
+      "evidenceUrls": ["https://github.com/coollabsio/coolify", "https://www.netlify.com/pricing/"],
+      "overlap": "Git-linked application deployment and hosting management.",
+      "limitations": "Deployment models, CDN, functions and usage-credit accounting differ.",
+      "discoveryEvidenceIds": ["016a54591b171302cdd692bffd5aee3275f7e1493588b0be99e98788071a574c"]
+    },
+    {
+      "id": "coolify-heroku",
+      "projectId": "coolify",
+      "productId": "heroku",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/coollabsio/coolify",
+      "evidenceUrls": ["https://github.com/coollabsio/coolify", "https://www.heroku.com/pricing"],
+      "overlap": "Application deployment, service operation and database management.",
+      "limitations": "Self-managed resources differ from managed dynos, database services and add-on marketplaces.",
+      "discoveryEvidenceIds": ["016a54591b171302cdd692bffd5aee3275f7e1493588b0be99e98788071a574c"]
+    },
+    {
+      "id": "dokploy-vercel",
+      "projectId": "dokploy",
+      "productId": "vercel",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/Dokploy/dokploy",
+      "evidenceUrls": ["https://github.com/Dokploy/dokploy", "https://vercel.com/pricing"],
+      "overlap": "Application deployment from source and hosting management.",
+      "limitations": "Community-component scope only; container operation differs from managed edge/serverless execution.",
+      "discoveryEvidenceIds": ["a69a840a84a77c60037902d855dfcade13b262a4a56c066b6549eba72b1235e9"]
+    },
+    {
+      "id": "dokploy-netlify",
+      "projectId": "dokploy",
+      "productId": "netlify",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/Dokploy/dokploy",
+      "evidenceUrls": ["https://github.com/Dokploy/dokploy", "https://www.netlify.com/pricing/"],
+      "overlap": "Application deployment and hosting workflows.",
+      "limitations": "CDN/functions/credit models differ; proprietary Dokploy components excluded from project scope.",
+      "discoveryEvidenceIds": ["a69a840a84a77c60037902d855dfcade13b262a4a56c066b6549eba72b1235e9"]
+    },
+    {
+      "id": "dokploy-heroku",
+      "projectId": "dokploy",
+      "productId": "heroku",
+      "verification": "author-claimed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://github.com/Dokploy/dokploy",
+      "evidenceUrls": ["https://github.com/Dokploy/dokploy", "https://www.heroku.com/pricing"],
+      "overlap": "Application deployments, services and database management.",
+      "limitations": "Community-component scope only; managed dynos and add-on products require separate cost modeling.",
+      "discoveryEvidenceIds": ["a69a840a84a77c60037902d855dfcade13b262a4a56c066b6549eba72b1235e9"]
+    },
+    {
+      "id": "keycloak-auth0",
+      "projectId": "keycloak",
+      "productId": "auth0",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://auth0.com/pricing",
+      "evidenceUrls": ["https://github.com/keycloak/keycloak", "https://auth0.com/pricing"],
+      "overlap": "Authentication, federation, OIDC/OAuth flows and access management.",
+      "limitations": "Operations, MAU licensing, organizations, MFA and provider integrations differ; no drop-in migration claim."
+    },
+    {
+      "id": "meilisearch-algolia",
+      "projectId": "meilisearch",
+      "productId": "algolia",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-19",
+      "discoveryUrl": "https://www.algolia.com/pricing",
+      "evidenceUrls": [
+        "https://github.com/meilisearch/meilisearch",
+        "https://www.algolia.com/pricing"
+      ],
+      "overlap": "Application search APIs, indexing and relevant search results.",
+      "limitations": "Community engine only; hosting, consumption metrics, ranking controls and enterprise features differ."
+    },
+    {
+      "id": "penpot-uxpin",
+      "projectId": "penpot",
+      "productId": "uxpin",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/penpot/penpot",
+      "evidenceUrls": ["https://github.com/penpot/penpot", "https://www.uxpin.com/pricing"],
+      "overlap": "Interface design, interactive prototypes, shared components and developer handoff.",
+      "limitations": "Feature-overlap inference from public materials, not a migration test. Code-component workflows, AI credits, deployment and editing capabilities differ.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "zulip-twist",
+      "projectId": "zulip",
+      "productId": "twist",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/zulip/zulip",
+      "evidenceUrls": ["https://github.com/zulip/zulip", "https://twist.com/pricing"],
+      "overlap": "Threaded team conversations, channels, search and persistent discussion history.",
+      "limitations": "Feature-overlap inference, not an author endorsement. Topic organization, real-time workflows, integrations, guests and retention rules differ; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "focalboard-basecamp",
+      "projectId": "focalboard",
+      "productId": "basecamp",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/mattermost-community/focalboard",
+      "evidenceUrls": [
+        "https://github.com/mattermost-community/focalboard",
+        "https://basecamp.com/pricing"
+      ],
+      "overlap": "Shared task planning, project coordination and progress tracking.",
+      "limitations": "Feature-overlap inference limited to project coordination. Basecamp account tiers, chat and file storage do not establish parity with issue workflows, scheduling, portfolios or enterprise modules; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "leantime-basecamp",
+      "projectId": "leantime",
+      "productId": "basecamp",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/Leantime/leantime",
+      "evidenceUrls": ["https://github.com/Leantime/leantime", "https://basecamp.com/pricing"],
+      "overlap": "Shared task planning, project coordination and progress tracking.",
+      "limitations": "Feature-overlap inference limited to project coordination. Basecamp account tiers, chat and file storage do not establish parity with issue workflows, scheduling, portfolios or enterprise modules; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "openproject-basecamp",
+      "projectId": "openproject",
+      "productId": "basecamp",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/opf/openproject",
+      "evidenceUrls": ["https://github.com/opf/openproject", "https://basecamp.com/pricing"],
+      "overlap": "Shared task planning, project coordination and progress tracking.",
+      "limitations": "Feature-overlap inference limited to project coordination. Basecamp account tiers, chat and file storage do not establish parity with issue workflows, scheduling, portfolios or enterprise modules; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "plane-jira-cloud",
+      "projectId": "plane",
+      "productId": "jira-cloud",
+      "verification": "author-claimed",
+      "discoveryUrl": "https://github.com/makeplane/plane",
+      "evidenceUrls": [
+        "https://github.com/makeplane/plane",
+        "https://www.atlassian.com/en/software/jira/pricing"
+      ],
+      "overlap": "Tasks, issue tracking and collaborative project planning; the repository names this product as an alternative target.",
+      "limitations": "Records the repository author claim, not independent feature parity. Sprints, documents, permissions, automations and commercial features vary by edition; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "plane-linear",
+      "projectId": "plane",
+      "productId": "linear",
+      "verification": "author-claimed",
+      "discoveryUrl": "https://github.com/makeplane/plane",
+      "evidenceUrls": ["https://github.com/makeplane/plane", "https://linear.app/pricing"],
+      "overlap": "Tasks, issue tracking and collaborative project planning; the repository names this product as an alternative target.",
+      "limitations": "Records the repository author claim, not independent feature parity. Sprints, documents, permissions, automations and commercial features vary by edition; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "plane-monday",
+      "projectId": "plane",
+      "productId": "monday",
+      "verification": "author-claimed",
+      "discoveryUrl": "https://github.com/makeplane/plane",
+      "evidenceUrls": ["https://github.com/makeplane/plane", "https://monday.com/pricing"],
+      "overlap": "Tasks, issue tracking and collaborative project planning; the repository names this product as an alternative target.",
+      "limitations": "Records the repository author claim, not independent feature parity. Sprints, documents, permissions, automations and commercial features vary by edition; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "plane-clickup",
+      "projectId": "plane",
+      "productId": "clickup",
+      "verification": "author-claimed",
+      "discoveryUrl": "https://github.com/makeplane/plane",
+      "evidenceUrls": ["https://github.com/makeplane/plane", "https://clickup.com/pricing"],
+      "overlap": "Tasks, issue tracking and collaborative project planning; the repository names this product as an alternative target.",
+      "limitations": "Records the repository author claim, not independent feature parity. Sprints, documents, permissions, automations and commercial features vary by edition; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "wekan-trello",
+      "projectId": "wekan",
+      "productId": "trello",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/wekan/wekan",
+      "evidenceUrls": ["https://github.com/wekan/wekan", "https://trello.com/pricing"],
+      "overlap": "Kanban boards, cards and collaborative task tracking.",
+      "limitations": "Feature-overlap inference limited to board-based task tracking. Automation, timelines, reporting, integrations, hosting and commercial entitlements differ; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "wekan-asana",
+      "projectId": "wekan",
+      "productId": "asana",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/wekan/wekan",
+      "evidenceUrls": ["https://github.com/wekan/wekan", "https://asana.com/pricing"],
+      "overlap": "Kanban boards, cards and collaborative task tracking.",
+      "limitations": "Feature-overlap inference limited to board-based task tracking. Automation, timelines, reporting, integrations, hosting and commercial entitlements differ; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "wekan-clickup",
+      "projectId": "wekan",
+      "productId": "clickup",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/wekan/wekan",
+      "evidenceUrls": ["https://github.com/wekan/wekan", "https://clickup.com/pricing"],
+      "overlap": "Kanban boards, cards and collaborative task tracking.",
+      "limitations": "Feature-overlap inference limited to board-based task tracking. Automation, timelines, reporting, integrations, hosting and commercial entitlements differ; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "excalidraw-miro",
+      "projectId": "excalidraw",
+      "productId": "miro",
+      "verification": "feature-overlap-reviewed",
+      "discoveryUrl": "https://github.com/excalidraw/excalidraw",
+      "evidenceUrls": ["https://github.com/excalidraw/excalidraw", "https://miro.com/pricing/"],
+      "overlap": "Collaborative visual sketches, diagrams and whiteboard canvases.",
+      "limitations": "Feature-overlap inference limited to visual collaboration. Workshop tooling, templates, enterprise controls, persistent cloud storage and Excalidraw Plus are not treated as equivalent; no migration tested.",
+      "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "bruno-postman",
+      "projectId": "bruno",
+      "productId": "postman",
+      "verification": "author-claimed",
+      "discoveryUrl": "https://github.com/usebruno/bruno",
+      "evidenceUrls": ["https://github.com/usebruno/bruno", "https://www.postman.com/pricing/"],
+      "overlap": "API request authoring, collections and testing; the repository explicitly names Postman as an alternative target.",
+      "limitations": "The author claim does not establish migration compatibility or complete feature parity. Bruno emphasizes local files and Git; hosted collaboration, AI, monitoring and commercial editions differ.",
+      "reviewedOn": "2026-10-20"
+    }
+  ]
+}

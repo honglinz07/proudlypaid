@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.local/
+.wrangler/
+.dev.vars
+.dev.vars.*
+apps/api/worker-configuration.d.ts
