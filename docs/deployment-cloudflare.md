@@ -1,5 +1,7 @@
 # Proudly Paid on Cloudflare
 
+**English** | [简体中文](deployment-cloudflare.zh-CN.md)
+
 The production profile is `apps/api/wrangler.production.jsonc`. Frontend and API source remain separate workspaces. One Worker serves the independently built React assets and the existing read-only API on the same hostname.
 
 ## Resources
@@ -10,6 +12,12 @@ The production profile is `apps/api/wrangler.production.jsonc`. Frontend and API
 - Local development continues to use `apps/api/wrangler.jsonc` and local simulated storage. Remote commands require an explicitly authenticated Cloudflare session.
 
 The asset configuration sends `/api` and `/api/*` to the Worker before SPA fallback, including browser navigations. This prevents missing API routes from returning `index.html`. Direct visits to `/search`, `/faq`, `/manifesto` and `/contribute` load the SPA.
+
+## Before deploying a fork
+
+Authenticate with your own Cloudflare account. Replace the official Worker name, route hostnames and zone IDs, and D1 database binding in `apps/api/wrangler.production.jsonc` with your own resources. The [separate deployment guide](deployment-lite.md#cloudflare-api-and-d1) explains D1 creation. Use your own private R2 bucket if you keep recovery snapshots; it is managed separately from the Worker binding.
+
+For a new database, review the write budget and complete the schema/catalog initialization below before expecting search to work. Publishing code does not initialize D1. Existing deployments do not need another database import for a code-only update.
 
 ## Build and publish code
 

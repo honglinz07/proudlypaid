@@ -1,20 +1,24 @@
-# 首个测试版发布说明
+# First beta release
 
-状态：Proudly Paid 已部署到 Worker、生产 D1 和私有 R2，根域名与 www 已绑定。www 的页面、真实搜索及 API 路由已通过线上 HTTP 验收；直连 Cloudflare 的根域名正常，当前代理访问根域名仍出现旧 Squarespace 页面。首次全量索引导入触发 D1 写入提醒，已停止进一步远程写入，后续代码部署不导入数据。公开仓库为 [honglinz07/proudlypaid](https://github.com/honglinz07/proudlypaid)，源码和反馈入口默认使用这个地址。站点代码、前后端和原创研究摘要均采用 MIT；依赖、第三方 README 与素材保留各自许可。当前生产部署步骤见 [Cloudflare 部署说明](deployment-cloudflare.md)。
+**English** | [简体中文](release-beta.zh-CN.md)
 
-## 这个版本可以做什么
+Proudly Paid is deployed on Workers, production D1, and private R2, with both the root and www domains bound. At launch verification, www pages, real search, and API routing passed online HTTP checks. The root hostname also worked when connecting directly to Cloudflare, while the local proxy path still returned the old Squarespace page.
 
-- 使用独立 Workers + D1 API 搜索名称、别名和仓库地址，支持有限拼写纠错。
-- 展示经过审阅的替代关系及带配置、来源和日期的价格；只在相同币种、单位和账期内按单价降序排列。
-- 页面标注 Beta，说明“仓库已索引”不等于“已有推荐”。首页提供六个已覆盖的示例入口。
-- 从空结果或已有推荐进入 `/contribute`，整理申请收录、替代品或纠正线索，复制或下载 Markdown。
-- 源码弹窗和反馈页提供公开仓库链接；用户在 GitHub 自行确认提交，Fork 可覆盖目标仓库地址。
+The first full index import triggered a D1 write alert. Further remote writes were stopped; subsequent code deployments do not import data. The public repository is [honglinz07/proudlypaid](https://github.com/honglinz07/proudlypaid), the default destination for source and contribution links. Original site code, frontend, backend, and research summaries are MIT licensed; dependencies, third-party READMEs, and assets retain their own licenses. See the [Cloudflare deployment guide](deployment-cloudflare.md).
 
-本地研究目录截至 2026-10-20 为 24 个项目、34 个产品、54 组研究关系；37 组可发布关系覆盖 19 个项目。干净源码默认只包含这份精选目录，不包含私人本地采集集、原始 README、账号或令牌。全量名称索引可由部署者选择另行导入。
+## What this beta supports
 
-## 从干净源码运行
+- Independent Workers + D1 API search by name, alias, or repository URL, with bounded typo assistance.
+- Reviewed alternative relationships and prices with configurations, sources, and dates. Unit prices sort highest first only within a matching currency and billing basis.
+- A visible Beta label and separate states for indexed repositories and reviewed recommendations. The homepage links to six covered example projects.
+- `/contribute` can carry over search context, prepare project requests or corrections, and copy or download a Markdown draft.
+- Source and contribution links point to the public repository. Users confirm submissions on GitHub themselves; forks can override the destination.
 
-需要 Node.js 24+ 和 npm 11+。在源码根目录执行：
+As of 2026-10-20, the research catalog contains **24 projects, 34 products, and 54 researched relationships**. Of these, 37 publishable relationships cover 19 projects. A clean clone includes this curated catalog, without private local collections, raw READMEs, accounts, or tokens. Deployers may separately import a repository-name index after checking their write budget.
+
+## Run from a clean clone
+
+Use Node.js 24+ and npm 11+. From the repository root:
 
 ```bash
 npm ci
@@ -23,35 +27,35 @@ npm run check
 npm run dev
 ```
 
-浏览器打开 <http://127.0.0.1:5273>。停止后重新运行 `npm run dev` 即可使用已有本地数据库。上述步骤不需要 GitHub 或 Cloudflare 凭据。
+Open <http://127.0.0.1:5273>. After stopping the servers, `npm run dev` reuses the existing local database. These local steps do not require GitHub or Cloudflare credentials.
 
-首轮试用可验证：Penpot 的 Figma/UXPin 分组、Bruno 的 Postman 个人/团队分组、Appsmith 的 Retool 欧元角色分组、Formbricks 的待审价格提示，以及 Supabase 的“已找到仓库、推荐待补充”状态。
+Useful checks include Penpot’s Figma/UXPin price groups, Bruno’s Postman individual/team groups, Appsmith’s Retool euro-denominated role groups, Formbricks’ pending-price indicator, and Supabase’s indexed-but-awaiting-recommendations state.
 
-## Fork 与 GitHub 链接
+## Forks and GitHub links
 
-1. Fork [公开仓库](https://github.com/honglinz07/proudlypaid)，保留 MIT 许可证、锁文件、CI 和 issue 模板。不要上传 `.local/`、`node_modules/`、构建输出或环境私有配置。
-2. 默认地址指向官方仓库。部署自己的 Fork 时，将 `apps/web/.env.example` 复制为同目录的 `.env.local`，把 `VITE_REPOSITORY_URL` 改成自己的真实仓库网页地址，例如 `https://github.com/你的账号/仓库名`。这是公开地址，不是凭据；正式值必须符合 GitHub 的账号与仓库命名规则。
-3. 重新启动开发服务或构建前端。在源码弹窗检查链接，在反馈页整理一条线索，确认“前往 GitHub 提交”指向该仓库的模板。仅打开表单不会发布 issue。
-4. GitHub CI 通过后，可以给验证过的提交创建测试版发布。发布介绍需注明目录覆盖和价格限制。
+1. Fork the [public repository](https://github.com/honglinz07/proudlypaid). Keep the MIT license, lockfile, CI, and issue templates. Do not upload `.local/`, `node_modules/`, build output, or private environment files.
+2. Links default to the official repository. For your own deployment, copy `apps/web/.env.example` to `apps/web/.env.local` and set `VITE_REPOSITORY_URL` to your real repository web URL, such as `https://github.com/your-account/your-repository`. This is a public address, not a credential, and must follow GitHub’s account/repository naming rules.
+3. Restart development or rebuild the frontend. Check the source dialog, prepare a research lead, and confirm that “Open GitHub to submit” targets your repository’s template. Opening the form does not publish an issue.
+4. Once GitHub CI passes, a verified commit can be used for a beta release. Release notes should state catalog coverage and pricing limitations.
 
-显式设置 `VITE_REPOSITORY_URL=` 时，源码弹窗隐藏仓库链接，反馈页提供复制和下载。`VITE_` 配置会写入公开前端，不能用于保存凭据。无效或带登录信息的仓库地址会使开发启动/构建失败，并提示修正。
+An explicitly empty `VITE_REPOSITORY_URL=` hides the repository links while retaining local copying and downloads. `VITE_` values are bundled into the public frontend and must never hold credentials. Invalid repository URLs, including URLs with embedded credentials, make development startup/build fail with a correction message.
 
-## 部署与上线验证
+## Deployment and online verification
 
-按 [轻量版部署说明](deployment-lite.md) 创建自己的 D1、导入选定目录、部署 API 与独立静态前端。必须先将同源 `/api/*` 转到 Worker，再应用 SPA 回退；Vite 的代理不会随构建产物自动上线。主机需允许直接访问 `/search`、`/faq`、`/manifesto` 和 `/contribute`。
+Use the [combined Cloudflare guide](deployment-cloudflare.md) for one Worker serving assets and the API with D1 and private R2 recovery snapshots, or the [lightweight deployment guide](deployment-lite.md) for separate frontend/API deployment. Use your own database and domains. Route same-origin `/api` and `/api/*` to the API before SPA fallback; the Vite proxy is not deployed with static assets. Allow direct visits to `/search`, `/faq`, `/manifesto`, and `/contribute`.
 
-上线时检查健康接口的目录版本和仓库数量、上述五种搜索情况、中英文、手机布局、源码链接及手动反馈流程。当前没有在线提交后端、搜索统计或自动收录；反馈草稿在本站页面内不持久化，离开页面会丢失未保存内容。
+Check the health response’s catalog version/count, the five search cases above, both languages, narrow screens, source links, and the manual contribution flow. There is no online submission backend, search analytics, or automatic catalog acceptance. Contribution drafts are not persisted by the website and are lost on leaving the page unless copied or downloaded.
 
-## 后续边界
+## Remaining scope
 
-价格不是实时采购报价，套餐组件不等于完整账单。仍有候选与价格待核验；语义搜索、自动价格更新、审核后台及快照清理未实现。Fork 使用自己的部署账号、目标仓库和域名，分别验证本地运行与云端部署。
+Prices are research observations, not live procurement quotes. Billing components are not complete product bills. Candidates and prices still need review; semantic search, automatic price updates, an editorial dashboard, and snapshot cleanup are not implemented. Forks use their own deployment accounts, repositories, and domains, and should validate local operation and production separately.
 
-## 本轮本地验收
+## Initial local verification record
 
-- 在 Windows、Node.js 24 / npm 11 上，从不含依赖、本地数据库和采集集的源码副本执行 `npm ci`，再成功迁移并导入 24 个精选项目。
-- 主工作区和干净副本均通过完整 `npm run check`：74 项测试实际执行且全部通过，类型、代码规范、格式、API 预构建及前端构建通过。最后的无障碍标签与样式微调另行通过前端类型、规范、格式与构建检查。
-- 干净副本在独立本地端口启动前后端，代理健康接口返回 `curated-only` 和 24 个项目；Bruno 精确搜索返回真实目录记录。
-- 浏览器验证桌面、平板和手机布局，中英文、空结果带入、HTTPS 来源校验、草稿预览、复制、Markdown 下载、修改后清除旧预览、键盘关闭弹窗，以及配置前后的源码和反馈链接。未提交任何远程 issue；检查期间未记录浏览器警告或错误。
-- 新增配置、页面、贡献模板和文档，无依赖版本、锁文件、数据库结构或采集数据变更。构建工具仅提示 Wrangler 有较新补丁版本，本轮保留已锁定版本。
+- On Windows with Node.js 24 and npm 11, a clean source copy without dependencies, a local database, or the collected index completed `npm ci`, migrations, and import of the 24-project curated catalog.
+- Both the main workspace and clean source copy passed the full `npm run check`: 74 tests executed and passed, alongside typechecks, lint, formatting, API dry runs, and frontend builds. Subsequent accessibility-label and style adjustments also passed focused frontend checks and a build.
+- The clean copy ran frontend and API on isolated local ports. The proxied health endpoint reported `curated-only` with 24 projects; an exact Bruno query returned the real catalog record.
+- Browser checks covered desktop, tablet, mobile, both languages, search context, HTTPS evidence validation, draft preview, copying, Markdown downloads, invalidation after editing, keyboard dialog dismissal, and configured/unconfigured repository links. No remote issues were submitted, and no browser warnings or errors were recorded during those checks.
+- That release added configuration, pages, contribution templates, and documentation without changing dependency versions, the lockfile, database schema, or collected data. Wrangler reported an available patch release; the locked version was retained.
 
-页面截图：[首页](screenshots/proudlypaid-beta-local.png)、[补充目录](screenshots/release-feedback-desktop.png)、[手机反馈预览](screenshots/release-feedback-mobile.png)。历史截图保留部分旧品牌名称；后续提交仍需验证 GitHub CI 和对应云端部署。
+Screenshots: [homepage](screenshots/proudlypaid-beta-local.png), [contribution page](screenshots/release-feedback-desktop.png), and [mobile draft](screenshots/release-feedback-mobile.png). Some historical screenshots retain the earlier brand. Verify GitHub CI and the corresponding cloud deployment for subsequent releases.

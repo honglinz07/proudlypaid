@@ -1,5 +1,7 @@
 # Deploying the lightweight profile
 
+**English** | [简体中文](deployment-lite.zh-CN.md)
+
 This guide covers separate frontend and API deployments. For the same-hostname Worker + D1 + private R2 production profile, use [the Cloudflare deployment guide](deployment-cloudflare.md). The production database identifier is public configuration; no credentials are included in source. The all-zero D1 ID in `apps/api/wrangler.jsonc` remains a local placeholder; the following remote commands are manual deployment steps, not part of `npm run check`.
 
 ## Local verification
@@ -16,6 +18,8 @@ Open <http://127.0.0.1:5273/search?q=Penpot>. The API runs at 8787. Local D1 sta
 ## Cloudflare API and D1
 
 Authenticate with Wrangler yourself or provide appropriately scoped credentials through the deployment environment. Never put tokens in source, config, shell history or generated SQL. `scripts/wrangler.mjs` runs the locked CLI from `apps/api/`, so configuration and migration paths resolve consistently.
+
+Before any remote migration or import, review the [D1 write budget](deployment-cloudflare.md#check-the-write-budget-first). Search indexes contribute additional written rows. Start with the curated catalog and check your account's current allowance; publishing code does not require reimporting data.
 
 1. Create your database:
 
