@@ -10,8 +10,6 @@ An entirely serious directory of paid, proprietary alternatives to open-source s
 
 Ironically, **Proudly Paid is fully open source**. Its frontend, backend, original assets, documentation, and original research summaries are MIT licensed. The source workspaces retain their original `closedsources` package names.
 
-![Proudly Paid interface preview](docs/screenshots/proudlypaid-beta-local.png)
-
 ## Current status
 
 This is a **lightweight search beta**: a React frontend calls an independent Cloudflare Workers + D1 API backed by repository identities and a source-linked research catalog. Prices are dated research observations, not live quotes.
