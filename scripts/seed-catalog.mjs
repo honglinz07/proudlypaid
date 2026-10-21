@@ -49,11 +49,28 @@ const literal = (value) =>
       : `'${String(value).replaceAll("'", "''")}'`;
 
 /** Immutable, content-addressed snapshots; the last statement activates a complete import. */
-export function buildSeed(catalog, collected = [], scope = "curated-only") {
+export function buildSeed(catalog, collected = [], scope = "curated-only", researchBase = null) {
   if (!["curated-only", "local-github-index"].includes(scope))
     throw new Error("Invalid collection scope.");
   const errors = validateCatalog(catalog);
   if (errors.length) throw new Error(errors.join("\n"));
+  if (researchBase) {
+    if (
+      collected.length ||
+      !/^[a-f0-9]{64}$/u.test(researchBase.activeVersion) ||
+      !/^[a-f0-9]{64}$/u.test(researchBase.indexVersion) ||
+      researchBase.collectionScope !== scope ||
+      !Array.isArray(researchBase.repositoryIds) ||
+      researchBase.repositoryIds.length !== researchBase.projectCount ||
+      new Set(researchBase.repositoryIds).size !== researchBase.projectCount ||
+      researchBase.repositoryIds.some(
+        (id) => typeof id !== "string" || repoIdentity(`https://github.com/${id}`).id !== id,
+      )
+    )
+      throw new Error(
+        "Invalid research base; capture the active snapshot and its repository IDs first.",
+      );
+  }
   const projects = new Map();
   for (const row of collected) {
     if (typeof row.name !== "string" || typeof row.url !== "string")
@@ -85,8 +102,18 @@ export function buildSeed(catalog, collected = [], scope = "curated-only") {
     });
   }
   const ordered = [...projects.values()].sort((a, b) => a.id.localeCompare(b.id, "en"));
+  const baseIds = new Set(researchBase?.repositoryIds ?? []);
+  const projectCount = researchBase
+    ? researchBase.projectCount + ordered.filter((project) => !baseIds.has(project.id)).length
+    : ordered.length;
   const version = createHash("sha256")
-    .update(JSON.stringify({ seedFormat: 1, catalog, projects: ordered, scope }))
+    .update(
+      JSON.stringify(
+        researchBase
+          ? { seedFormat: 2, catalog, indexVersion: researchBase.indexVersion, projectCount, scope }
+          : { seedFormat: 1, catalog, projects: ordered, scope },
+      ),
+    )
     .digest("hex");
   const statements = [];
   const insert = (table, columns, rows) => {
@@ -100,9 +127,19 @@ export function buildSeed(catalog, collected = [], scope = "curated-only") {
       );
     }
   };
-  insert("catalog_snapshots", "version,reviewed_on,project_count,collection_scope", [
-    [version, catalog.reviewedOn, ordered.length, scope],
-  ]);
+  insert(
+    "catalog_snapshots",
+    `version,reviewed_on,project_count,collection_scope${researchBase ? ",index_version" : ""}`,
+    [
+      [
+        version,
+        catalog.reviewedOn,
+        projectCount,
+        scope,
+        ...(researchBase ? [researchBase.indexVersion] : []),
+      ],
+    ],
+  );
   const terms = [];
   insert(
     "projects",
@@ -151,25 +188,39 @@ export function buildSeed(catalog, collected = [], scope = "curated-only") {
     ]),
   );
   statements.push(
-    `INSERT INTO catalog_state (id,version) VALUES (1,${literal(version)}) ON CONFLICT(id) DO UPDATE SET version=excluded.version;`,
+    researchBase
+      ? `INSERT INTO catalog_state (id,version) SELECT 1,${literal(version)} WHERE EXISTS (SELECT 1 FROM catalog_state WHERE id=1 AND version IN (${literal(researchBase.activeVersion)},${literal(version)})) ON CONFLICT(id) DO UPDATE SET version=excluded.version;`
+      : `INSERT INTO catalog_state (id,version) VALUES (1,${literal(version)}) ON CONFLICT(id) DO UPDATE SET version=excluded.version;`,
   );
-  return { statements, version, projectCount: ordered.length, collectionScope: scope };
+  return {
+    statements,
+    version,
+    projectCount,
+    collectionScope: scope,
+    storedProjectCount: ordered.length,
+    ...(researchBase ? { indexVersion: researchBase.indexVersion } : {}),
+  };
 }
 
 export async function generateSeed(args = []) {
   let indexPath;
+  let basePath;
   let output = fileURLToPath(new URL("../.local/catalog-seeds/catalog.sql", import.meta.url));
   for (let i = 0; i < args.length; i++) {
     const flag = args[i];
     const value = args[++i];
-    if (!value || !["--index", "--out"].includes(flag))
-      throw new Error("Usage: catalog:seed [--index index.jsonl] [--out output.sql]");
+    if (!value || !["--index", "--base", "--out"].includes(flag))
+      throw new Error(
+        "Usage: catalog:seed [--index index.jsonl | --base base.json] [--out output.sql]",
+      );
     if (flag === "--index") indexPath = resolve(value);
+    else if (flag === "--base") basePath = resolve(value);
     else output = resolve(value);
   }
+  if (indexPath && basePath) throw new Error("Use either --index or --base, never both.");
   const root = fileURLToPath(new URL("../", import.meta.url));
   const local = fileURLToPath(new URL("../.local/catalog-seeds/", import.meta.url));
-  if (!output.startsWith(local) || (indexPath && output === indexPath))
+  if (!output.startsWith(local) || output === indexPath || output === basePath)
     throw new Error(`Seed output must stay inside ${local}`);
   const collected = [];
   if (indexPath) {
@@ -189,10 +240,18 @@ export async function generateSeed(args = []) {
     }
   }
   const catalog = JSON.parse(await readFile(resolve(root, "data/catalog/pilot.json"), "utf8"));
-  const seed = buildSeed(catalog, collected, indexPath ? "local-github-index" : "curated-only");
+  const base = basePath ? JSON.parse(await readFile(basePath, "utf8")) : null;
+  const seed = buildSeed(
+    catalog,
+    collected,
+    base ? base.collectionScope : indexPath ? "local-github-index" : "curated-only",
+    base,
+  );
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, `${seed.statements.join("\n")}\n`, "utf8");
-  console.log(`Seed generated: ${seed.projectCount} projects (${seed.collectionScope}); ${output}`);
+  console.log(
+    `Seed generated: ${seed.projectCount} searchable projects, ${seed.storedProjectCount} project rows to import (${seed.collectionScope}); ${output}`,
+  );
   return { ...seed, output };
 }
 

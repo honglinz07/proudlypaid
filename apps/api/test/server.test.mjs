@@ -277,13 +277,18 @@ test("automation and form services can publish while incomplete starting prices 
     [formbricks, "typeform", "39"],
   ]) {
     assert.equal(data.pendingAlternativeCount, 0);
-    assert.equal(data.alternatives[0].id, id);
-    assert.equal(data.alternatives[0].pendingPriceCount, 1);
-    assert.ok(data.alternatives[0].prices.every((price) => price.amount === null));
+    const product = data.alternatives.find((product) => product.id === id);
+    assert.ok(product);
+    assert.equal(product.pendingPriceCount, 1);
+    assert.ok(product.prices.every((price) => price.amount === null));
     assert.deepEqual(data.priceGroups, []);
-    assert.ok(!JSON.stringify(data.alternatives[0].prices).includes(pendingAmount));
+    assert.ok(!JSON.stringify(product.prices).includes(pendingAmount));
   }
-  assert.ok(activepieces.alternatives[0].prices.some((price) => price.kind === "usage-based"));
+  assert.ok(
+    activepieces.alternatives
+      .find((product) => product.id === "zapier")
+      .prices.some((price) => price.kind === "usage-based"),
+  );
 });
 
 test("Retool regional euro components retain role groups while ambiguous dollar amounts stay private", async () => {
@@ -330,4 +335,102 @@ test("seed validation rejects broken input before producing executable SQL", () 
   );
   assert.throws(() => buildSeed({ ...catalog, products: [] }), /nonempty/u);
   assert.equal(buildSeed(catalog).version, buildSeed(catalog).version);
+});
+
+test("new support plans keep workspace and agent prices separate and withhold ambiguous billing", async () => {
+  const data = await alternatives("chatwoot/chatwoot");
+  assert.ok(data.alternatives.some((product) => product.id === "crisp"));
+  assert.ok(data.alternatives.some((product) => product.id === "freshdesk"));
+  const workspace = data.priceGroups.find((group) => group.unit === "workspace");
+  assert.deepEqual(
+    workspace.entries.map((entry) => entry.price.amount),
+    [295, 95, 45],
+  );
+  assert.ok(workspace.entries.every((entry) => entry.productId === "crisp"));
+  const agents = data.priceGroups.find(
+    (group) => group.unit === "agent" && group.billing === "annual",
+  );
+  assert.deepEqual(
+    agents.entries
+      .filter((entry) => entry.productId === "freshdesk")
+      .map((entry) => entry.price.amount),
+    [89, 55, 19],
+  );
+  const scout = data.alternatives.find((product) => product.id === "helpscout");
+  assert.equal(scout.pendingPriceCount, 3);
+  assert.ok(scout.prices.every((price) => price.amount === null));
+  for (const [id, productId, count] of [
+    ["activepieces/activepieces", "ifttt", 2],
+    ["appsmithorg/appsmith", "superblocks", 1],
+  ]) {
+    const product = (await alternatives(id)).alternatives.find(
+      (product) => product.id === productId,
+    );
+    assert.equal(product.pendingPriceCount, count);
+    assert.ok(product.prices.every((price) => price.amount === null));
+  }
+});
+
+test("research-only snapshots reuse the full index, shadow aliases, reject stale activation and roll back", async () => {
+  const migration = await readFile(
+    new URL("../migrations/0002_research_snapshots.sql", import.meta.url),
+    "utf8",
+  );
+  await platform.env.DB.batch(
+    unstable_splitSqlQuery(migration).map((sql) => platform.env.DB.prepare(sql)),
+  );
+  const base = {
+    activeVersion: seed.version,
+    indexVersion: seed.version,
+    projectCount: seed.projectCount,
+    collectionScope: "local-github-index",
+    repositoryIds: [
+      ...catalog.projects.map((p) => new URL(p.repository).pathname.slice(1).toLowerCase()),
+      ...extra.slice(0, 2).map((p) => p.name),
+    ],
+  };
+  const updated = structuredClone(catalog);
+  const penpot = updated.projects.find((p) => p.id === "penpot");
+  penpot.aliases = ["fresh-review-alias"];
+  const next = buildSeed(updated, [], "local-github-index", base);
+  assert.equal(next.storedProjectCount, catalog.projects.length);
+  await importStatements(next.statements.slice(0, -1));
+  assert.equal((await search("fresh-review-alias")).match, "none");
+  await importStatements(next.statements.slice(-1));
+  assert.equal((await search("fresh-review-alias")).preferredProjectId, "penpot/penpot");
+  assert.equal((await search("no-alternatives")).projects[0].id, "example/no-alternatives");
+  assert.equal((await alternatives("example/no-alternatives")).alternatives.length, 0);
+  assert.equal((await search("grafnaa")).projects[0].id, "grafana/grafana");
+  assert.equal((await search("pot")).projects.length, 2);
+  assert.equal(
+    (await alternatives("chatwoot/chatwoot")).alternatives.some((p) => p.id === "freshdesk"),
+    true,
+  );
+  assert.equal((await search("penpot")).catalog.projectCount, seed.projectCount);
+  const stored = await platform.env.DB.prepare(
+    "SELECT COUNT(*) AS count FROM projects WHERE version=?",
+  )
+    .bind(next.version)
+    .first();
+  assert.equal(stored.count, catalog.projects.length);
+  await importStatements(next.statements);
+  assert.equal((await search("pot")).projects.length, 2);
+  const stale = structuredClone(updated);
+  stale.projects[0].aliases.push("stale-alias");
+  const rejected = buildSeed(stale, [], "local-github-index", base);
+  await importStatements(rejected.statements);
+  assert.equal((await search("penpot")).catalog.version, next.version);
+  assert.equal((await search("stale-alias")).match, "none");
+  // A later research snapshot points directly to the original full index, never a chain.
+  const second = buildSeed(stale, [], "local-github-index", {
+    ...base,
+    activeVersion: next.version,
+  });
+  assert.equal(second.version, rejected.version);
+  await importStatements(second.statements.slice(-1));
+  assert.equal((await search("stale-alias")).match, "exact");
+  assert.equal((await search("no-alternatives")).projects.length, 1);
+  await importStatements(seed.statements.slice(-1));
+  assert.equal((await search("fresh-review-alias")).match, "none");
+  assert.equal((await search("penpot")).catalog.version, seed.version);
 });

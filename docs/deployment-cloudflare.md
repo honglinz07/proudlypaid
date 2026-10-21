@@ -62,6 +62,26 @@ Paths passed to Wrangler resolve from `apps/api/` because the repository wrapper
 
 The first production dataset has 66,531 repository identities and the checked-in reviewed catalog. Repository indexing does not imply a reviewed recommendation or an approved open-source license. README bodies are not imported into D1 or uploaded to the production bucket.
 
+## Small research updates
+
+Use this path when only the checked-in research changes. Do not reimport the 66,531-row name index for each small batch. Apply migration `0002_research_snapshots.sql` once, and publish the compatible Worker before activating a research snapshot. Old full snapshots remain readable before and after this nullable-column migration.
+
+Before editing, capture the active catalog version and resolve its root index version (`index_version ?? version`). Retain a local `base.json` with `activeVersion`, `indexVersion`, `collectionScope`, `projectCount`, and `repositoryIds`: the complete lowercase identities belonging to that **root full snapshot**, not the current curated overlay. Verify these against the active deployment and its original recovery inputs. `projectCount` describes the root index; any new curated identities are added by the generator. Keep this manifest under ignored `.local/`.
+
+```bash
+npm run catalog:seed -- --base .local/catalog-releases/RELEASE/base.json --out .local/catalog-seeds/research-update.sql
+```
+
+The output contains the complete small research snapshot, only curated project rows, and a guarded final activation statement. Its hash includes the research and root index identity. It does not refresh older review dates. Test the SQL against isolated local D1 with the same schema; inspect row counts and measured writes including index/FTS maintenance, then review current D1 usage before executing it remotely. The generator's searchable project count is not its write count. Stop on import errors; verify that the active pointer actually changed, because a stale expected version deliberately prevents activation.
+
+```bash
+node scripts/wrangler.mjs d1 execute DB --config wrangler.production.jsonc --remote --file ../../.local/catalog-seeds/research-update.sql --yes
+```
+
+Keep the old snapshot intact for rollback. An explicit `UPDATE catalog_state SET version='<previous-version>' WHERE id=1 AND version='<new-version>'` restores the previous catalog; code rollback alone does not restore data. Do not delete the root snapshot or its recovery objects while a research snapshot depends on it.
+
+For R2, retain `research-update.sql`, `research.json`, both schema migrations and a checksummed manifest at the new version's prefix. The manifest must identify the required root snapshot. Recovery into a new database first restores the root schema/seed, then applies migration 0002 and the research update. A research update is **not** a standalone full backup. Read back and verify all uploaded objects. No raw README or vendor HTML belongs in these recovery inputs.
+
 ## R2 recovery snapshots
 
 Keep a versioned prefix `catalog/<snapshot-version>/` containing:

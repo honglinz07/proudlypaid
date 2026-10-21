@@ -62,6 +62,26 @@ node scripts/wrangler.mjs d1 execute DB --config wrangler.production.jsonc --rem
 
 首次生产数据包含 66,531 条仓库身份记录及已入库的研究目录。仓库被索引不代表已有审阅过的推荐，也不代表其开源许可证已确认。README 正文没有导入 D1，也没有上传到生产桶。
 
+## 小批研究更新
+
+只修改研究目录时，使用这一方式；每批都重新导入 66,531 条名称索引会浪费写入额度。只需应用一次 `0002_research_snapshots.sql`，并在激活研究快照前发布兼容的 Worker。这个可空字段迁移前后均可读取旧的完整快照。
+
+编辑前先记录当前目录版本，再取得根索引版本（`index_version ?? version`）。本地 `base.json` 包含 `activeVersion`、`indexVersion`、`collectionScope`、`projectCount` 和 `repositoryIds`。后者必须是**根完整快照**的全部小写仓库身份，不能混入当前研究覆盖层。根据线上状态及原始恢复资料核对，保存在忽略的 `.local/` 中。`projectCount` 是根索引数量，新增研究项目由生成器另行计入。
+
+```bash
+npm run catalog:seed -- --base .local/catalog-releases/RELEASE/base.json --out .local/catalog-seeds/research-update.sql
+```
+
+输出包含整份小型研究快照、仅经过研究的项目行，以及检查预期版本的最后激活语句。哈希包含研究内容和根索引身份；旧事实日期不会被刷新。先在相同结构的独立本地 D1 验证 SQL、行数和索引/FTS 维护产生的实际写入，再核对当前线上额度。可搜索项目数不等于本次写入量。导入出错应停止；过期版本会阻止激活，因此必须读回当前指针确认结果。
+
+```bash
+node scripts/wrangler.mjs d1 execute DB --config wrangler.production.jsonc --remote --file ../../.local/catalog-seeds/research-update.sql --yes
+```
+
+保留旧快照以便回退。`UPDATE catalog_state SET version='<previous-version>' WHERE id=1 AND version='<new-version>'` 可以恢复上一份目录；仅回退代码不会恢复数据。有研究快照依赖根索引时，不应删除该完整快照及恢复对象。
+
+新版本的 R2 前缀保存 `research-update.sql`、`research.json`、两份结构迁移和含校验和的清单；清单必须注明依赖的根快照。恢复到新库时，先恢复根结构和种子，再应用迁移 0002 及研究更新。增量研究更新**不是**独立完整备份。上传后读回并核验所有对象，不上传原始 README 或厂商 HTML。
+
 ## R2 恢复快照
 
 使用带版本的前缀 `catalog/<snapshot-version>/`，保存：

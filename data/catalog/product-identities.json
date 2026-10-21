@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "discovery-only",
-  "updatedOn": "2026-10-20",
+  "updatedOn": "2026-10-21",
   "notes": "Name and URL locators for offline grouping. These are not verified closed-source products, price records or alternative relationships. Some have free plans or open components. Candidate evidence always requires separate review.",
   "products": [
     {
@@ -533,6 +533,36 @@
       "pricingUrl": "https://basecamp.com/pricing",
       "scope": "Discovery identity for the hosted service only. Individual candidate relationships, prices and source availability require their own review.",
       "caseSensitive": false
+    },
+    {
+      "id": "workato",
+      "name": "Workato",
+      "aliases": ["Workato"],
+      "category": "automation",
+      "homepage": "https://www.workato.com/",
+      "pricingUrl": "https://www.workato.com/pricing/tiers",
+      "scope": "The commercial Workato integration platform, excluding separately licensed connectors, SDKs and customer recipes.",
+      "caseSensitive": false
+    },
+    {
+      "id": "ifttt",
+      "name": "IFTTT",
+      "aliases": ["IFTTT"],
+      "category": "automation",
+      "homepage": "https://ifttt.com/",
+      "pricingUrl": "https://ifttt.com/plans",
+      "scope": "The paid IFTTT Pro and Pro+ hosted automation service, excluding user Applets and separately licensed developer components.",
+      "caseSensitive": false
+    },
+    {
+      "id": "crisp",
+      "name": "Crisp",
+      "aliases": ["Crisp"],
+      "category": "customer-support",
+      "homepage": "https://crisp.chat/",
+      "pricingUrl": "https://crisp.chat/en/pricing/",
+      "scope": "Crisp paid hosted customer-support workspaces, excluding customer data and separately licensed libraries or integrations.",
+      "caseSensitive": true
     }
   ]
 }

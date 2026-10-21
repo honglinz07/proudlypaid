@@ -15,7 +15,7 @@ Ironically, **Proudly Paid is fully open source**. Its frontend, backend, origin
 This is a **lightweight search beta**: a React frontend calls an independent Cloudflare Workers + D1 API backed by repository identities and a source-linked research catalog. Prices are dated research observations, not live quotes.
 
 - Search project names, aliases, `owner/repository`, or HTTPS GitHub repository URLs. Substring matching and bounded typo assistance are supported; fuzzy results require explicit repository selection.
-- The official website indexes **66,531 repository names and URLs**. A fresh clone includes a curated catalog of **24 projects, 34 products, and 54 researched relationships**. Of these, 37 publishable relationships cover 19 projects; 24 products have scoped classification reviews. An indexed repository does not necessarily have a reviewed recommendation.
+- The official website indexes **66,531 repository names and URLs**. A fresh clone includes a curated catalog of **24 projects, 41 products, and 61 researched relationships**. Of these, 44 publishable relationships cover 19 projects; 31 products have scoped classification reviews. An indexed repository does not necessarily have a reviewed recommendation.
 - Try `Penpot`, `Grafana`, `Zulip`, `Plane`, `Bruno`, `Hoppscotch`, `Appsmith`, `Activepieces`, or `Formbricks`.
 - Distinguish an unknown repository from an indexed repository awaiting recommendations. A public repository is not automatically open source; unreviewed licenses are labeled accordingly.
 - Numeric prices sort highest first **within the same currency, unit, display period, and payment cycle**. Choose a billing basis, set a unit-price ceiling, and inspect configurations and original sources. Sales quotes and usage-based models stay outside numeric rankings.
@@ -25,7 +25,7 @@ This is a **lightweight search beta**: a React frontend calls an independent Clo
 
 ## Quick start
 
-Use **Node.js 24+ and npm 11+**. Wrangler simulates Workers and D1 locally. No Cloudflare account, GitHub token, or paid service is required for local development; the first installation downloads the open-source dependencies.
+Use **Node.js 24.5+ and npm 11+**. Wrangler simulates Workers and D1 locally. No Cloudflare account, GitHub token, or paid service is required for local development; the first installation downloads the open-source dependencies.
 
 ```bash
 npm ci
@@ -130,6 +130,8 @@ Outputs default to the ignored `.local/github-collection/` directory. `npm run g
 
 After bounded retries, persistent network failures stop collection with saved progress and a concrete error code such as `ENOTFOUND`, `EACCES`, or `UND_ERR_CONNECT_TIMEOUT`. Remaining repositories are not marked as failed in bulk. Resume once connectivity is restored. For long Windows collection runs, use a normal PowerShell session. Node.js proxy behavior depends on its version and configuration; enabling a system proxy does not necessarily configure Node.js, and this tool does not change system proxy settings.
 
+For bulk discovery, `npm run catalog:import` joins two public datasets and optional README groups into an unverified product queue. `npm run catalog:pages -- --input <products.json>` collects website evidence with robots checks, request budgets, caching and resumable product checkpoints. Outputs remain local; these tools never import D1 or automatically approve recommendations. See the [bulk research guide](docs/bulk-research.md) for source licenses, inputs and review requirements.
+
 ## Documentation
 
 | Guide | English | 简体中文 |
@@ -139,6 +141,7 @@ After bounded retries, persistent network failures stop collection with saved pr
 | Separate frontend and API | [Lightweight deployment](docs/deployment-lite.md) | [轻量版部署](docs/deployment-lite.zh-CN.md) |
 | Beta release and verification | [Beta release](docs/release-beta.md) | [测试版发布](docs/release-beta.zh-CN.md) |
 | Search engine discovery | [Search discovery](docs/search-discovery.md) | [搜索引擎发现](docs/search-discovery.zh-CN.md) |
+| Bulk product research | [Bulk research](docs/bulk-research.md) | [批量研究](docs/bulk-research.zh-CN.md) |
 
 [Architecture](docs/architecture.md) and [Contributing](CONTRIBUTING.md) are in English. Historical research records and the original collection brief retain their original Chinese text and dates.
 

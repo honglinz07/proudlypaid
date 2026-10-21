@@ -208,10 +208,12 @@ export function groupPrices(alternatives: Alternative[]): PriceGroup[] {
 }
 export class CatalogStore {
   private readonly db: D1Database;
+  private readonly indexVersion: string;
   readonly info: CatalogInfo;
-  constructor(db: D1Database, info: CatalogInfo) {
+  constructor(db: D1Database, info: CatalogInfo, indexVersion = info.version) {
     this.db = db;
     this.info = info;
+    this.indexVersion = indexVersion;
   }
   static async open(db: D1Database) {
     const row = await db
@@ -223,23 +225,32 @@ export class CatalogStore {
         reviewed_on: string;
         project_count: number;
         collection_scope: CatalogInfo["collectionScope"];
+        index_version?: string | null;
       }>();
     return row
-      ? new CatalogStore(db, {
-          version: row.version,
-          reviewedOn: row.reviewed_on,
-          projectCount: row.project_count,
-          collectionScope: row.collection_scope,
-        })
+      ? new CatalogStore(
+          db,
+          {
+            version: row.version,
+            reviewedOn: row.reviewed_on,
+            projectCount: row.project_count,
+            collectionScope: row.collection_scope,
+          },
+          row.index_version ?? row.version,
+        )
       : null;
   }
   async search(query: string, limit: number): Promise<SearchResponse> {
     const normalized = normalizeQuery(query);
+    // A reviewed project shadows its base-index row, including the old aliases and FTS terms.
+    const visible =
+      "(p.version=? OR (p.version=? AND NOT EXISTS (SELECT 1 FROM projects o WHERE o.version=? AND o.id=p.id)))";
+    const versions = [this.info.version, this.indexVersion, this.info.version];
     const exact = await this.db
       .prepare(
-        "SELECT p.* FROM project_terms t JOIN projects p ON p.version=t.version AND p.id=t.project_id WHERE t.version=? AND t.term=? ORDER BY p.reviewed_on IS NULL,p.id LIMIT ?",
+        `SELECT p.* FROM project_terms t JOIN projects p ON p.version=t.version AND p.id=t.project_id WHERE t.version IN (?,?) AND t.term=? AND ${visible} ORDER BY p.reviewed_on IS NULL,p.id LIMIT ?`,
       )
-      .bind(this.info.version, normalized, limit + 1)
+      .bind(this.info.version, this.indexVersion, normalized, ...versions, limit + 1)
       .all<ProjectRow>();
     let rows = exact.results;
     let match: SearchResponse["match"] = rows.length ? "exact" : "none";
@@ -247,9 +258,9 @@ export class CatalogStore {
       const phrase = `"${normalized.replaceAll('"', '""')}"`;
       const found = await this.db
         .prepare(
-          "SELECT p.* FROM project_search f JOIN projects p ON p.rowid=f.rowid WHERE project_search MATCH ? AND p.version=? ORDER BY p.reviewed_on IS NULL,bm25(project_search),p.id LIMIT ?",
+          `SELECT p.* FROM project_search f JOIN projects p ON p.rowid=f.rowid WHERE project_search MATCH ? AND ${visible} ORDER BY p.reviewed_on IS NULL,bm25(project_search),p.id LIMIT ?`,
         )
-        .bind(phrase, this.info.version, limit + 1)
+        .bind(phrase, ...versions, limit + 1)
         .all<ProjectRow>();
       rows = found.results;
       if (rows.length) match = "substring";
@@ -261,9 +272,9 @@ export class CatalogStore {
         const expression = grams.map((gram) => `"${gram.replaceAll('"', '""')}"`).join(" OR ");
         const candidates = await this.db
           .prepare(
-            "SELECT p.* FROM project_search f JOIN projects p ON p.rowid=f.rowid WHERE project_search MATCH ? AND p.version=? ORDER BY bm25(project_search),p.id LIMIT 60",
+            `SELECT p.* FROM project_search f JOIN projects p ON p.rowid=f.rowid WHERE project_search MATCH ? AND ${visible} ORDER BY bm25(project_search),p.id LIMIT 60`,
           )
-          .bind(expression, this.info.version)
+          .bind(expression, ...versions)
           .all<ProjectRow>();
         const threshold = Math.max(1, Math.floor(normalized.length / 4));
         rows = candidates.results
@@ -311,8 +322,10 @@ export class CatalogStore {
   }
   async alternatives(id: string): Promise<AlternativesResponse | null> {
     const project = await this.db
-      .prepare("SELECT * FROM projects WHERE version=? AND id=?")
-      .bind(this.info.version, id)
+      .prepare(
+        "SELECT * FROM projects WHERE version IN (?,?) AND id=? ORDER BY (version=?) DESC LIMIT 1",
+      )
+      .bind(this.info.version, this.indexVersion, id, this.info.version)
       .first<ProjectRow>();
     if (!project) return null;
     const [reviewed, pending] = await this.db.batch<{

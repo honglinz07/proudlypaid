@@ -42,6 +42,8 @@ All successful responses have `apiVersion: 1`. All listed routes support GET and
 
 An empty initialized database returns 503 `CATALOG_NOT_READY`. Database/runtime failures return 503 `CATALOG_UNAVAILABLE`; raw SQL errors and user queries are not logged or returned. A project with no reviewed alternatives still returns 200 with its identity and empty arrays, distinct from a missing project.
 
+Research-only snapshots may set `catalog_snapshots.index_version` to an immutable full snapshot. Only curated project overrides, terms, products and relationships are written; other repositories remain searchable in the base index. Overrides shadow the entire base project row and its aliases. Index references point directly to a full snapshot, never a chain. The final activation statement checks the expected active version, so a stale release cannot replace a newer one. Full snapshots and their hashes remain unchanged; an older version can be reactivated without rebuilding the index. See [small catalog updates](deployment-cloudflare.md#small-research-updates) for base manifests, write accounting and recovery dependencies.
+
 ## Name search
 
 Normalization uses Unicode NFKC, lowercase and collapsed whitespace. HTTPS GitHub URLs may be converted to repository paths, including a trailing slash and `.git` suffix. There is no live GitHub call on the request path.

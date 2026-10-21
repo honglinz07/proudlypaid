@@ -19,7 +19,7 @@ Cloudflare 一体部署入口见 [Worker + D1 + R2 部署说明](docs/deployment
 目前是 **轻量搜索测试版（Beta）**：React 前端调用独立的 Workers + D1 API，使用真实仓库索引和带来源的研究目录。价格为注明日期的研究观察，非实时报价。
 
 - 搜索项目名、别名、`owner/repository` 或 HTTPS GitHub 仓库地址，支持子串和有限的拼写纠错；模糊结果需要确认仓库。
-- 研究目录含 **24 个项目、34 个产品、54 组关系**；其中 24 个产品完成限定范围的分类审阅，符合发布规则的关系为 37 组，覆盖 19 个项目；其余保留待审状态。
+- 研究目录含 **24 个项目、41 个产品、61 组关系**；其中 31 个产品完成限定范围的分类审阅，符合发布规则的关系为 44 组，覆盖 19 个项目；其余保留待审状态。
 - 可尝试 `Penpot`、`Grafana`、`Zulip`、`Plane`、`Bruno`、`Hoppscotch`、`Appsmith`、`Activepieces`、`Formbricks`。官方站点已导入 66,531 个采集仓库名称与地址；干净克隆默认可使用仓库内的 24 项研究目录。索引数量不等于已有付费推荐的项目数量。
 - 区分“没找到仓库”和“仓库找到了，替代品尚待补充”。公开仓库不自动等于开源，未审阅许可证的项目会明确标注。
 - 数字价格按币种、单位、展示周期、付款周期分组降序；可选择口径、设置单价上限、展开配置和原始来源。询价和用量模型不参与数字排序。
@@ -29,7 +29,7 @@ Cloudflare 一体部署入口见 [Worker + D1 + R2 部署说明](docs/deployment
 
 ## 快速开始
 
-本地开发需要 **Node.js 24+、npm 11+**。Wrangler 在本地模拟 Worker 和 D1，无需 Cloudflare 账号、GitHub Token 或付费服务。首次安装需要下载开源依赖。
+本地开发需要 **Node.js 24.5+、npm 11+**。Wrangler 在本地模拟 Worker 和 D1，无需 Cloudflare 账号、GitHub Token 或付费服务。首次安装需要下载开源依赖。
 
 ```bash
 npm ci
@@ -102,7 +102,7 @@ npm run build          # 两个工作区分别构建
 
 ## GitHub 与开源
 
-研究目录已扩充到 **24 个项目、34 个产品、54 组对应关系**，包含原始来源、许可证范围、价格配置、逐条核验日期与待核验状态。详见 [目录记录](data/catalog/README.md)、[本批结果](data/catalog/batches/2026-10-20-api-automation-forms.md) 和 [JSON 数据](data/catalog/pilot.json)。当前搜索接入其中符合发布规则的记录，尚不构成广泛覆盖的产品目录。
+研究目录已扩充到 **24 个项目、41 个产品、61 组对应关系**，包含原始来源、许可证范围、价格配置、逐条核验日期与待核验状态。详见 [目录记录](data/catalog/README.md)、[本批结果](data/catalog/batches/2026-10-21-bulk-review.md) 和 [JSON 数据](data/catalog/pilot.json)。当前搜索接入其中符合发布规则的记录，尚不构成广泛覆盖的产品目录。
 
 `npm run catalog:discover` 可以离线扫描已采集 README 的替代声明，将带行号、内容哈希的候选写入 `.local/catalog-discovery/run-*/`；候选不会自动当作闭源产品或已核验关系。后续如何查找官网、核验付费产品、记录价格并服务于 Workers/VPS 两版后端，见 [目录扩充方案](docs/catalog-expansion-plan.md)。
 
@@ -130,6 +130,8 @@ Windows 用户可以在隐藏输入令牌后，一并重试旧的失败记录（
 .\scripts\collect-github.ps1 -RetryFailed
 ```
 
+`npm run catalog:import` 可合并两份公开数据和可选 README 分组，生成待核验产品队列；`npm run catalog:pages -- --input <products.json>` 按产品采集官网证据，支持 robots 检查、请求预算、缓存和断点续跑。结果只写本地，不导入 D1、不自动批准推荐。输入格式、来源许可与核验要求见 [批量研究指南](docs/bulk-research.zh-CN.md)。
+
 ## 文档导航
 
 | 文档 | English | 简体中文 |
@@ -139,6 +141,7 @@ Windows 用户可以在隐藏输入令牌后，一并重试旧的失败记录（
 | 前后端独立部署 | [Lightweight deployment](docs/deployment-lite.md) | [轻量版部署](docs/deployment-lite.zh-CN.md) |
 | 测试版发布与验证 | [Beta release](docs/release-beta.md) | [测试版发布](docs/release-beta.zh-CN.md) |
 | 搜索引擎发现 | [Search discovery](docs/search-discovery.md) | [搜索引擎发现](docs/search-discovery.zh-CN.md) |
+| 批量产品研究 | [Bulk research](docs/bulk-research.md) | [批量研究](docs/bulk-research.zh-CN.md) |
 
 [架构说明](docs/architecture.md)和[贡献指南](CONTRIBUTING.md)目前为英文；历史研究批次、目录扩充计划与原始采集任务书保留中文和原始日期。
 

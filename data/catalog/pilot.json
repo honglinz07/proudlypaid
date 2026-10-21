@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "research-pilot",
-  "reviewedOn": "2026-10-20",
+  "reviewedOn": "2026-10-21",
   "license": "MIT",
   "notes": "Manually researched facts and original summaries. Reviewed records are served by the Lite search API after snapshot import. Prices retain their original units; there is no global price ranking.",
   "projects": [
@@ -2034,6 +2034,368 @@
           "reviewedOn": "2026-10-20"
         }
       ]
+    },
+    {
+      "id": "workato",
+      "name": "Workato",
+      "homepage": "https://www.workato.com/",
+      "reviewedOn": "2026-10-21",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The commercial Workato integration platform, excluding separately licensed connectors, SDKs and customer recipes.",
+        "evidenceUrls": ["https://www.workato.com/legal/terms-of-service"],
+        "notes": "Section 4 restricts source-code discovery, modification and redistribution of the platform. This scoped classification does not cover every Workato repository.",
+        "reviewedOn": "2026-10-21"
+      },
+      "pricing": [
+        {
+          "plan": "Enterprise integration platform",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-21",
+          "configuration": "Scope and commercial terms arranged with sales.",
+          "notes": "The official pricing page offers sales contact; no numeric enterprise rate or quote is asserted.",
+          "sourceUrl": "https://www.workato.com/pricing/tiers"
+        }
+      ]
+    },
+    {
+      "id": "ifttt",
+      "name": "IFTTT",
+      "homepage": "https://ifttt.com/",
+      "reviewedOn": "2026-10-21",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The paid IFTTT Pro and Pro+ hosted automation service, excluding user Applets and separately licensed developer components.",
+        "evidenceUrls": ["https://ifttt.com/terms"],
+        "notes": "The Terms of Use section reserves ownership of the service and restricts reverse engineering, modification and derivative works.",
+        "reviewedOn": "2026-10-21"
+      },
+      "pricing": [
+        {
+          "plan": "Pro",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 2.99,
+          "currency": null,
+          "unit": "subscription",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-21",
+          "configuration": "20 Applets; displayed monthly equivalent with $35.88 annual payment.",
+          "notes": "The paid-plan dollar symbol has not been independently tied to an ISO currency; amount withheld from public sorting.",
+          "sourceUrl": "https://ifttt.com/plans",
+          "currencySymbol": "$"
+        },
+        {
+          "plan": "Pro+",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 8.99,
+          "currency": null,
+          "unit": "subscription",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Unlimited Applets; displayed monthly equivalent with $107.88 annual payment.",
+          "notes": "Paid-plan currency remains unconfirmed.",
+          "sourceUrl": "https://ifttt.com/plans",
+          "currencySymbol": "$"
+        }
+      ]
+    },
+    {
+      "id": "jotform",
+      "name": "Jotform",
+      "homepage": "https://www.jotform.com/",
+      "reviewedOn": "2026-10-21",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The hosted Jotform form-building platform, excluding customer forms and separately licensed SDKs.",
+        "evidenceUrls": ["https://www.jotform.com/terms/"],
+        "notes": "The platform terms restrict copying, resale and reverse engineering. Classification is limited to the hosted service.",
+        "reviewedOn": "2026-10-21"
+      },
+      "pricing": [
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-21",
+          "configuration": "Custom multiuser enterprise configuration.",
+          "notes": "The official pricing material directs enterprise customers to sales. Numeric self-service prices were not reliably extracted.",
+          "sourceUrl": "https://www.jotform.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "crisp",
+      "name": "Crisp",
+      "homepage": "https://crisp.chat/",
+      "reviewedOn": "2026-10-21",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "Crisp paid hosted customer-support workspaces, excluding customer data and separately licensed libraries or integrations.",
+        "evidenceUrls": ["https://crisp.chat/en/terms/"],
+        "notes": "The July 27, 2026 terms reserve platform IP and restrict source-code discovery and redistribution.",
+        "reviewedOn": "2026-10-21"
+      },
+      "pricing": [
+        {
+          "plan": "Mini",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 45,
+          "currency": "USD",
+          "unit": "workspace",
+          "period": "month",
+          "billing": "monthly",
+          "reviewedOn": "2026-10-21",
+          "configuration": "One workspace; 4 included seats.",
+          "notes": "Monthly base plan; optional usage and taxes are additional.",
+          "sourceUrl": "https://crisp.chat/en/pricing/",
+          "currencyEvidenceUrl": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "plan": "Essentials",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 95,
+          "currency": "USD",
+          "unit": "workspace",
+          "period": "month",
+          "billing": "monthly",
+          "reviewedOn": "2026-10-21",
+          "configuration": "One workspace; 10 included seats.",
+          "notes": "Monthly base plan.",
+          "sourceUrl": "https://crisp.chat/en/pricing/",
+          "currencyEvidenceUrl": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "plan": "Plus",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 295,
+          "currency": "USD",
+          "unit": "workspace",
+          "period": "month",
+          "billing": "monthly",
+          "reviewedOn": "2026-10-21",
+          "configuration": "One workspace; 20 included seats before additional-seat charges.",
+          "notes": "Extra seats and AI usage can increase the bill.",
+          "sourceUrl": "https://crisp.chat/en/pricing/",
+          "currencyEvidenceUrl": "https://crisp.chat/en/pricing/"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-21",
+          "configuration": "Custom enterprise workspace.",
+          "notes": "Individual pricing is offered through a demo or sales discussion.",
+          "sourceUrl": "https://crisp.chat/en/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "freshdesk",
+      "name": "Freshdesk",
+      "homepage": "https://www.freshworks.com/freshdesk/",
+      "reviewedOn": "2026-10-21",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The Freshdesk email-first hosted helpdesk, excluding the separately priced Freshdesk Omni and separately licensed software.",
+        "evidenceUrls": ["https://www.freshworks.com/terms/"],
+        "notes": "Sections 2(c) and 4 reserve technology rights, restrict reverse engineering and state that hosted-service source code is not supplied.",
+        "reviewedOn": "2026-10-21"
+      },
+      "pricing": [
+        {
+          "plan": "Growth",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 19,
+          "currency": "USD",
+          "unit": "agent",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Email-first Freshdesk, per agent, displayed monthly with annual billing.",
+          "notes": "Base subscription; usage, add-ons and taxes can increase the bill.",
+          "sourceUrl": "https://www.freshworks.com/freshdesk/pricing/",
+          "currencyEvidenceUrl": "https://www.freshworks.com/helpdesk/software/hosted/"
+        },
+        {
+          "plan": "Pro",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 55,
+          "currency": "USD",
+          "unit": "agent",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Email-first Freshdesk, per agent, displayed monthly with annual billing.",
+          "notes": "This is not the Omni plan.",
+          "sourceUrl": "https://www.freshworks.com/freshdesk/pricing/",
+          "currencyEvidenceUrl": "https://www.freshworks.com/helpdesk/software/hosted/"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "list-price",
+          "verification": "verified",
+          "amount": 89,
+          "currency": "USD",
+          "unit": "agent",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Email-first Freshdesk, per agent, displayed monthly with annual billing.",
+          "notes": "Additional AI consumption and optional add-ons are excluded.",
+          "sourceUrl": "https://www.freshworks.com/freshdesk/pricing/",
+          "currencyEvidenceUrl": "https://www.freshworks.com/helpdesk/software/hosted/"
+        }
+      ]
+    },
+    {
+      "id": "helpscout",
+      "name": "Help Scout",
+      "homepage": "https://www.helpscout.com/",
+      "reviewedOn": "2026-10-21",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The hosted Help Scout customer-support service, excluding customer content and separately licensed integration code.",
+        "evidenceUrls": ["https://www.helpscout.com/company/legal/terms-of-service/"],
+        "notes": "The service terms restrict source discovery, modification and redistribution of the service.",
+        "reviewedOn": "2026-10-21"
+      },
+      "pricing": [
+        {
+          "plan": "Standard",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 25,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Per-user monthly display; monthly versus annual toggle state remains unconfirmed.",
+          "notes": "Payment cycle must be confirmed before ranking.",
+          "sourceUrl": "https://www.helpscout.com/pricing/",
+          "currencyEvidenceUrl": "https://docs.helpscout.com/article/106-payments-and-invoices"
+        },
+        {
+          "plan": "Plus",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 45,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Per-user monthly display; selected payment cycle remains unconfirmed.",
+          "notes": "Payment cycle must be confirmed before ranking.",
+          "sourceUrl": "https://www.helpscout.com/pricing/",
+          "currencyEvidenceUrl": "https://docs.helpscout.com/article/106-payments-and-invoices"
+        },
+        {
+          "plan": "Pro",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 75,
+          "currency": "USD",
+          "unit": "user",
+          "period": "month",
+          "billing": "unknown",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Per-user monthly display, minimum 10 users; payment cycle remains unconfirmed.",
+          "notes": "The minimum commitment and annual discount must not be confused with a one-user total.",
+          "sourceUrl": "https://www.helpscout.com/pricing/",
+          "currencyEvidenceUrl": "https://docs.helpscout.com/article/106-payments-and-invoices"
+        },
+        {
+          "plan": "AI Answers add-on",
+          "kind": "usage-based",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-21",
+          "configuration": "AI Answers charged by resolution, separately from the base user subscription.",
+          "notes": "A usage component is advertised; this record does not calculate a monthly bill.",
+          "sourceUrl": "https://www.helpscout.com/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "superblocks",
+      "name": "Superblocks",
+      "homepage": "https://www.superblocks.com/",
+      "reviewedOn": "2026-10-21",
+      "sourceAvailability": {
+        "classification": "proprietary-hosted-service",
+        "verification": "official-reviewed",
+        "scope": "The commercial Superblocks application-building platform, excluding customer-generated applications and separately licensed components.",
+        "evidenceUrls": ["https://www.superblocks.com/legal/master-services-agreement"],
+        "notes": "The master agreement restricts deriving platform source and modifying or redistributing its technology. Customer ownership of generated app code does not make the platform open source.",
+        "reviewedOn": "2026-10-21"
+      },
+      "pricing": [
+        {
+          "plan": "Teams",
+          "kind": "list-price",
+          "verification": "needs-review",
+          "amount": 100,
+          "currency": null,
+          "unit": "team",
+          "period": "month",
+          "billing": "annual",
+          "reviewedOn": "2026-10-21",
+          "configuration": "Base team plan displayed monthly, billed annually; one hosted app included.",
+          "notes": "Currency is not independently confirmed for this plan; general site currency settings are insufficient.",
+          "sourceUrl": "https://www.superblocks.com/pricing",
+          "currencySymbol": "$"
+        },
+        {
+          "plan": "Enterprise",
+          "kind": "contact-sales",
+          "verification": "verified",
+          "amount": null,
+          "currency": null,
+          "unit": null,
+          "period": null,
+          "billing": null,
+          "reviewedOn": "2026-10-21",
+          "configuration": "Custom enterprise deployment and support.",
+          "notes": "The enterprise plan requests sales contact rather than publishing a numeric rate.",
+          "sourceUrl": "https://www.superblocks.com/pricing"
+        }
+      ]
     }
   ],
   "relationships": [
@@ -2705,6 +3067,86 @@
       "overlap": "API request authoring, collections and testing; the repository explicitly names Postman as an alternative target.",
       "limitations": "The author claim does not establish migration compatibility or complete feature parity. Bruno emphasizes local files and Git; hosted collaboration, AI, monitoring and commercial editions differ.",
       "reviewedOn": "2026-10-20"
+    },
+    {
+      "id": "activepieces-workato",
+      "projectId": "activepieces",
+      "productId": "workato",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-21",
+      "discoveryUrl": "https://www.workato.com/products/ipaas",
+      "evidenceUrls": ["https://www.activepieces.com/", "https://www.workato.com/products/ipaas"],
+      "overlap": "Connecting business applications and orchestrating automated workflows.",
+      "limitations": "Enterprise governance, connectors and execution accounting differ; this is functional overlap rather than a migration guarantee."
+    },
+    {
+      "id": "activepieces-ifttt",
+      "projectId": "activepieces",
+      "productId": "ifttt",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-21",
+      "discoveryUrl": "https://ifttt.com/plans",
+      "evidenceUrls": ["https://www.activepieces.com/", "https://ifttt.com/plans"],
+      "overlap": "Triggers, app connections and multi-action automations.",
+      "limitations": "IFTTT emphasizes connected services and devices; connectors, filter logic, execution limits and self-hosting differ."
+    },
+    {
+      "id": "formbricks-jotform",
+      "projectId": "formbricks",
+      "productId": "jotform",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-21",
+      "discoveryUrl": "https://www.jotform.com/",
+      "evidenceUrls": ["https://formbricks.com/", "https://www.jotform.com/"],
+      "overlap": "Building online forms or surveys and collecting responses.",
+      "limitations": "Jotform also covers documents, payments and applications; feedback targeting, workflows and deployment models differ."
+    },
+    {
+      "id": "chatwoot-crisp",
+      "projectId": "chatwoot",
+      "productId": "crisp",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-21",
+      "discoveryUrl": "https://crisp.chat/en/pricing/",
+      "evidenceUrls": ["https://www.chatwoot.com/", "https://crisp.chat/en/pricing/"],
+      "overlap": "Shared customer conversations, live chat and a support knowledge base.",
+      "limitations": "Workspace allowances, channels, AI credits and extra-seat charges differ; workspace rates are not per-agent rates."
+    },
+    {
+      "id": "chatwoot-freshdesk",
+      "projectId": "chatwoot",
+      "productId": "freshdesk",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-21",
+      "discoveryUrl": "https://www.freshworks.com/freshdesk/pricing/",
+      "evidenceUrls": [
+        "https://www.chatwoot.com/",
+        "https://www.freshworks.com/freshdesk/pricing/"
+      ],
+      "overlap": "Customer support inboxes, assignment workflows and a self-service knowledge base.",
+      "limitations": "The selected product is email-first; chat and other channels can require the separately priced Omni offering."
+    },
+    {
+      "id": "chatwoot-helpscout",
+      "projectId": "chatwoot",
+      "productId": "helpscout",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-21",
+      "discoveryUrl": "https://www.helpscout.com/pricing/",
+      "evidenceUrls": ["https://www.chatwoot.com/", "https://www.helpscout.com/pricing/"],
+      "overlap": "Shared support inboxes, customer chat and knowledge-base publishing.",
+      "limitations": "User-based subscriptions, inbox allowances, AI charges and available channels differ."
+    },
+    {
+      "id": "appsmith-superblocks",
+      "projectId": "appsmith",
+      "productId": "superblocks",
+      "verification": "feature-overlap-reviewed",
+      "reviewedOn": "2026-10-21",
+      "discoveryUrl": "https://www.superblocks.com/pricing",
+      "evidenceUrls": ["https://www.appsmith.com/", "https://www.superblocks.com/pricing"],
+      "overlap": "Building internal business applications over data sources and APIs.",
+      "limitations": "AI-assisted generation, hosting models, governance and extra-app charges differ; generated code and platform licensing are separate."
     }
   ]
 }
