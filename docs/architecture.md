@@ -65,6 +65,8 @@ No automatic price refresh or age-based suspension policy exists yet. Users must
 
 ## Browser behavior and privacy
 
+Production builds prerender the shared React routes into static HTML without calling the API or reading D1. Page metadata and discovery rules live in `apps/web/src/lib/seo.ts`; the build renders these alongside the same page components. The browser starts the interactive client and updates metadata on navigation. The production asset profile serves each route's own HTML and returns a custom HTTP 404 for missing pages, while `/api` paths still reach the JSON handler first. See [search discovery](search-discovery.md) for canonical URLs, indexing exclusions, and Search Console setup.
+
 The client validates JSON and rejects HTML fallbacks, unsupported versions, unsafe links and malformed prices/groups. Search and detail requests share cancellation on navigation; each render is keyed to its current query/selection, so stale results cannot replace a later search. Requests have a 15-second timeout. Loading, retry, no-match, ambiguous/fuzzy, found-without-reviewed-alternative and unavailable-price states are explicit and localized. Research summaries retain their original English wording.
 
 Queries appear in the address bar and are sent to the API. The application does not store search history or add analytics. Only the locale preference is stored in local storage. Wrangler metrics and Worker invocation logs are disabled in the supplied config; infrastructure, reverse proxy and local development logs may still record requests, depending on deployment. Do not promise infrastructure-level anonymity.

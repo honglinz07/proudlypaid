@@ -42,7 +42,7 @@ An explicitly empty `VITE_REPOSITORY_URL=` hides the repository links while reta
 
 ## Deployment and online verification
 
-Use the [combined Cloudflare guide](deployment-cloudflare.md) for one Worker serving assets and the API with D1 and private R2 recovery snapshots, or the [lightweight deployment guide](deployment-lite.md) for separate frontend/API deployment. Use your own database and domains. Route same-origin `/api` and `/api/*` to the API before SPA fallback; the Vite proxy is not deployed with static assets. Allow direct visits to `/search`, `/faq`, `/manifesto`, and `/contribute`.
+Use the [combined Cloudflare guide](deployment-cloudflare.md) for one Worker serving assets and the API with D1 and private R2 recovery snapshots, or the [lightweight deployment guide](deployment-lite.md) for separate frontend/API deployment. Use your own database and domains. Route same-origin `/api` and `/api/*` to the API before serving the generated route HTML; the Vite proxy is not deployed with static assets. Allow direct visits to `/search`, `/faq`, `/manifesto`, and `/contribute`, and return the generated 404 page with status 404 for unknown routes. See [search discovery](search-discovery.md) for the sitemap and ownership verification steps.
 
 Check the health response’s catalog version/count, the five search cases above, both languages, narrow screens, source links, and the manual contribution flow. There is no online submission backend, search analytics, or automatic catalog acceptance. Contribution drafts are not persisted by the website and are lost on leaving the page unless copied or downloaded.
 

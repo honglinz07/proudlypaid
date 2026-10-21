@@ -40,7 +40,7 @@ npm run dev
 
 ## 部署与上线验证
 
-同一 Worker 提供静态资源和 API，并使用 D1 与私有 R2 恢复快照时，按 [Cloudflare 部署说明](deployment-cloudflare.zh-CN.md)操作；前后端独立部署时，按 [轻量版部署说明](deployment-lite.zh-CN.md)操作。使用自己的数据库和域名，必须先将同源 `/api` 和 `/api/*` 转到 API，再应用 SPA 回退；Vite 的代理不会随构建产物自动上线。主机需允许直接访问 `/search`、`/faq`、`/manifesto` 和 `/contribute`。
+同一 Worker 提供静态资源和 API，并使用 D1 与私有 R2 恢复快照时，按 [Cloudflare 部署说明](deployment-cloudflare.zh-CN.md)操作；前后端独立部署时，按 [轻量版部署说明](deployment-lite.zh-CN.md)操作。使用自己的数据库和域名，必须先将同源 `/api` 和 `/api/*` 转到 API，再提供已生成的路由 HTML；Vite 的代理不会随构建产物自动上线。主机需允许直接访问 `/search`、`/faq`、`/manifesto` 和 `/contribute`，未知路由返回生成的 404 页面和 404 状态。站点地图与所有权验证见[搜索引擎发现说明](search-discovery.zh-CN.md)。
 
 上线时检查健康接口的目录版本和仓库数量、上述五种搜索情况、中英文、手机布局、源码链接及手动反馈流程。当前没有在线提交后端、搜索统计或自动收录；反馈草稿在本站页面内不持久化，离开页面会丢失未保存内容。
 

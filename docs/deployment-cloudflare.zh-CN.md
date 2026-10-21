@@ -11,7 +11,7 @@
 - 恢复快照：私有 R2 桶 `proudlypaid-snapshots`。由部署命令行管理，不提供匿名下载或写入 API。Worker 只需要 D1 绑定。
 - 本地开发继续使用 `apps/api/wrangler.jsonc` 和本地模拟存储。远程命令需要部署者明确登录自己的 Cloudflare 账号。
 
-静态资源配置会先把 `/api` 和 `/api/*` 交给 Worker 处理，包括浏览器导航请求，避免缺失的 API 路由返回 `index.html`。直接访问 `/search`、`/faq`、`/manifesto` 和 `/contribute` 时加载 SPA。
+静态资源配置会先把 `/api` 和 `/api/*` 交给 Worker 处理，包括浏览器导航请求。其他已知路由以不带结尾斜杠的网址提供对应静态 HTML，随后启动交互应用。未知页面返回自定义 `404.html` 和 404 状态。规范网址、站点地图与 Search Console 设置见[搜索引擎发现说明](search-discovery.zh-CN.md)。Fork 构建前必须把 `VITE_SITE_URL` 设为自己的公开站点地址。
 
 ## 部署 Fork 前
 

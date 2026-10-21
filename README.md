@@ -100,8 +100,8 @@ Preview the frontend with `npm run preview --workspace @closedsources/web` at po
 The official instance at <https://www.proudlypaid.com/> uses **Workers + D1 + private R2**: one Worker serves frontend assets and the API, D1 stores the search catalog, and R2 holds recovery snapshots. The frontend and API remain separate source workspaces and can also be deployed independently.
 
 - **Combined Cloudflare deployment:** follow the [Workers + D1 + R2 guide](docs/deployment-cloudflare.md). The production profile includes the official instance’s public resource identifiers; forks must substitute their own database and domains. The all-zero D1 ID in the local profile is a development placeholder.
-- **Separate frontend and API:** follow the [lightweight deployment guide](docs/deployment-lite.md). Serve `apps/web/dist/` with SPA fallback and route `/api` and `/api/*` to the Worker before that fallback. Production uses same-origin relative API URLs; the Vite proxy is not included in the build, and there is no cross-origin API mode.
-- **SPA routes:** allow direct visits to `/search`, `/faq`, `/manifesto`, and `/contribute`. The frontend renders unknown-page UI; strict HTTP 404 behavior depends on the host.
+- **Separate frontend and API:** follow the [lightweight deployment guide](docs/deployment-lite.md). Serve the generated route HTML in `apps/web/dist/` and route `/api` and `/api/*` to the Worker first. Production uses same-origin relative API URLs; the Vite proxy is not included in the build, and there is no cross-origin API mode.
+- **Static pages and discovery:** builds prerender public pages, metadata, `robots.txt`, a sitemap, and a custom 404. The Cloudflare profile returns HTTP 404 for unknown pages while retaining client-side navigation. Forks should set `VITE_SITE_URL` to their own HTTPS origin. See [search discovery](docs/search-discovery.md), including the separate Search Console ownership/submission steps.
 - **VPS semantic profile:** planned, not implemented. It can reuse the catalog, JSON contract, and review rules while adding PostgreSQL/pgvector and semantic retrieval.
 
 `npm run deploy:cloudflare` publishes code and frontend assets; it does **not** import data. Before any remote migration or import, check the D1 write budget described in the deployment guide. Cloud resources follow the deploying account’s plan and service rules.
@@ -138,6 +138,7 @@ After bounded retries, persistent network failures stop collection with saved pr
 | Workers + D1 + R2 | [Cloudflare deployment](docs/deployment-cloudflare.md) | [Cloudflare 部署](docs/deployment-cloudflare.zh-CN.md) |
 | Separate frontend and API | [Lightweight deployment](docs/deployment-lite.md) | [轻量版部署](docs/deployment-lite.zh-CN.md) |
 | Beta release and verification | [Beta release](docs/release-beta.md) | [测试版发布](docs/release-beta.zh-CN.md) |
+| Search engine discovery | [Search discovery](docs/search-discovery.md) | [搜索引擎发现](docs/search-discovery.zh-CN.md) |
 
 [Architecture](docs/architecture.md) and [Contributing](CONTRIBUTING.md) are in English. Historical research records and the original collection brief retain their original Chinese text and dates.
 

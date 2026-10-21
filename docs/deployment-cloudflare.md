@@ -11,7 +11,7 @@ The production profile is `apps/api/wrangler.production.jsonc`. Frontend and API
 - Recovery snapshots: private R2 bucket `proudlypaid-snapshots`. R2 is operated by the deployment CLI, not exposed as an anonymous download or write API. The Worker needs only its D1 binding.
 - Local development continues to use `apps/api/wrangler.jsonc` and local simulated storage. Remote commands require an explicitly authenticated Cloudflare session.
 
-The asset configuration sends `/api` and `/api/*` to the Worker before SPA fallback, including browser navigations. This prevents missing API routes from returning `index.html`. Direct visits to `/search`, `/faq`, `/manifesto` and `/contribute` load the SPA.
+The asset configuration sends `/api` and `/api/*` to the Worker first, including browser navigations. Other known routes serve their own prerendered HTML without trailing slashes, then start the interactive app. Unknown pages return the custom `404.html` with status 404. See [search discovery](search-discovery.md) for canonical URLs, the generated sitemap, and Search Console setup. Forks must set `VITE_SITE_URL` to their own public origin before building.
 
 ## Before deploying a fork
 

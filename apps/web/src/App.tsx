@@ -8,20 +8,26 @@ import { ManifestoPage } from "./pages/ManifestoPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { SearchPage } from "./pages/SearchPage";
 
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route element={<SiteLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="search" element={<SearchPage />} />
+        <Route path="faq" element={<FaqPage />} />
+        <Route path="contribute" element={<ContributePage />} />
+        <Route path="manifesto" element={<ManifestoPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
+  );
+}
+
 export function App() {
   return (
     <LocaleProvider>
       <BrowserRouter>
-        <Routes>
-          <Route element={<SiteLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="search" element={<SearchPage />} />
-            <Route path="faq" element={<FaqPage />} />
-            <Route path="contribute" element={<ContributePage />} />
-            <Route path="manifesto" element={<ManifestoPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
     </LocaleProvider>
   );

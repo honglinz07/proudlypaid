@@ -60,12 +60,12 @@ npm run dev
 
 源码和反馈链接默认指向 `https://github.com/honglinz07/proudlypaid`。Fork 应将前端构建的 `VITE_REPOSITORY_URL` 覆盖为自己的 HTTPS GitHub 仓库地址。本地可参照 `.env.example` 使用 `apps/web/.env.local`，修改后重新构建。这是公开地址，不是密钥。显式空值隐藏 GitHub 链接，同时保留草稿复制和下载。详见 [测试版发布说明](release-beta.zh-CN.md)。
 
-使用 `npm run build --workspace @closedsources/web` 构建，将 `apps/web/dist/` 上传到支持 SPA 回退的静态主机。必须**先**把 `/api/*` 路由到 Worker，再处理 SPA 回退。可通过 Cloudflare 自定义域名 Worker 路由或反向代理实现同源边界。生产前端始终请求相对路径 `/api/...`；Vite 代理只用于本地开发和预览。
+使用 `npm run build --workspace @closedsources/web` 构建，将 `apps/web/dist/` 上传到静态主机。提供每个已生成路由对应的 HTML，对未知页面返回 `404.html` 和 HTTP 404。先把 `/api` 和 `/api/*` 路由到 Worker，可通过 Cloudflare 自定义域名 Worker 路由或反向代理实现同源边界。生产前端始终请求相对路径 `/api/...`；Vite 代理只用于本地开发和预览。Fork 构建前应把 `VITE_SITE_URL` 设为自己的公开 HTTPS 站点地址，详见[搜索引擎发现说明](search-discovery.zh-CN.md)。
 
 例如，已经提供前端静态资源的 Nginx 网关，可以保持完整 API 路径：
 
 ```nginx
-location /api/ {
+location ~ ^/api(?:/|$) {
     proxy_pass https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev;
     proxy_ssl_server_name on;
     proxy_ssl_verify on;
@@ -73,13 +73,15 @@ location /api/ {
     proxy_set_header Host YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev;
 }
 location / {
-    try_files $uri $uri/ /index.html;
+    try_files $uri $uri/index.html =404;
 }
+error_page 404 /404.html;
+location = /404.html { internal; }
 ```
 
 替换示例域名，并配置网关的 TLS、静态资源根目录和访问日志。上面的 CA 证书路径是 Debian/Ubuntu 示例，应使用本机受信任的证书集合，同时保持上游证书校验开启。使用原生 Cloudflare 路由无需 Nginx。当前没有跨域 API 模式，单纯把前端和 Worker 放到不同主机名下无法连接搜索。浏览器请求 `/api` 路径时，必须收到 JSON，包括 API 的 404/503，而不是 SPA 页面。
 
-前端 404 由客户端渲染，未知 SPA 路径的 HTTP 404 状态取决于主机。SPA 回退要包含 `/contribute`。应用没有搜索历史数据库或统计分析，但仍应单独检查基础设施的请求日志设置。反馈草稿在浏览器生成，不会提交到此 API。
+生成的 `404.html` 保留本站的未找到页面设计，不把不存在的网址伪装为正常页面。已知路由（包括 `/search` 和 `/contribute`）各有自己的 HTML，搜索查询参数应保持完整。应用没有搜索历史数据库或统计分析，但仍应单独检查基础设施的请求日志设置。反馈草稿在浏览器生成，不会提交到此 API。
 
 ## 本版本范围
 

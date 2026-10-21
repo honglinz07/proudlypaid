@@ -95,9 +95,9 @@ npm run build          # 两个工作区分别构建
 
 前端与 API 可以独立构建和部署。官方实例为 <https://www.proudlypaid.com/>，使用 Worker + D1 + 私有 R2；D1 本地配置中的全零 ID 只供开发。生产配置包含官方实例的公开资源标识，Fork 部署需换成自己的域名和数据库，步骤见 [Cloudflare 部署说明](docs/deployment-cloudflare.zh-CN.md)。代码部署不会执行数据库导入；任何远程迁移或导入之前，都应先检查指南中的 D1 写入预算。
 
-- **前端**：将 `apps/web/dist/` 部署至支持 SPA 回退的静态主机，非资源路由回退到 `index.html`，以支持直接打开 `/faq`、`/manifesto`、`/search`。404 界面由前端路由显示；严格的 HTTP 404 状态需另行在主机配置。
+- **前端**：将 `apps/web/dist/` 部署至静态主机，提供构建生成的各路由 HTML。构建会生成静态正文、元信息、`robots.txt`、站点地图与自定义 404；Cloudflare 生产配置对未知页面返回 HTTP 404，同时保留客户端导航。Fork 应把 `VITE_SITE_URL` 设为自己的 HTTPS 站点地址，详见[搜索引擎发现说明](docs/search-discovery.zh-CN.md)，包括单独的 Search Console 所有权验证与提交步骤。
 - **API**：部署至 Cloudflare Workers，绑定自己的 D1、应用迁移并导入目录。步骤见 [轻量版部署说明](docs/deployment-lite.zh-CN.md)。云端资源与费用取决于部署账号及服务规则。
-- **连接方式**：生产网关必须先把 `/api/*` 转发给 API，再处理前端 SPA 回退；浏览器使用同源相对路径，生产环境不依赖 Vite 代理。当前没有跨域直连配置。
+- **连接方式**：生产网关必须先把 `/api` 和 `/api/*` 转发给 API，再处理静态页面；浏览器使用同源相对路径，生产环境不依赖 Vite 代理。当前没有跨域直连配置。
 - **VPS 语义版**：尚未实现。后续复用目录、JSON 合约及核验规则，增加 PostgreSQL/pgvector 存储和语义检索适配器。
 
 ## GitHub 与开源
@@ -138,6 +138,7 @@ Windows 用户可以在隐藏输入令牌后，一并重试旧的失败记录（
 | Worker + D1 + R2 | [Cloudflare deployment](docs/deployment-cloudflare.md) | [Cloudflare 部署](docs/deployment-cloudflare.zh-CN.md) |
 | 前后端独立部署 | [Lightweight deployment](docs/deployment-lite.md) | [轻量版部署](docs/deployment-lite.zh-CN.md) |
 | 测试版发布与验证 | [Beta release](docs/release-beta.md) | [测试版发布](docs/release-beta.zh-CN.md) |
+| 搜索引擎发现 | [Search discovery](docs/search-discovery.md) | [搜索引擎发现](docs/search-discovery.zh-CN.md) |
 
 [架构说明](docs/architecture.md)和[贡献指南](CONTRIBUTING.md)目前为英文；历史研究批次、目录扩充计划与原始采集任务书保留中文和原始日期。
 

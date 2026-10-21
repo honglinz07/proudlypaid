@@ -60,12 +60,12 @@ See official [D1 migrations](https://developers.cloudflare.com/d1/reference/migr
 
 Public source/feedback links default to `https://github.com/honglinz07/proudlypaid`. For a fork, override the frontend build's `VITE_REPOSITORY_URL` with its own HTTPS GitHub repository URL. Local configuration can use `apps/web/.env.local` based on its `.env.example`; rebuild after changes. This is a public address, never a secret. An explicitly empty value hides the GitHub links while keeping local draft copying/downloading. See [beta release steps](release-beta.md).
 
-Build with `npm run build --workspace @closedsources/web` and upload `apps/web/dist/` to a static host with SPA fallback. Route `/api/*` to the Worker **before** applying that fallback. A Cloudflare custom-domain Worker route or a reverse proxy can provide the same-origin boundary. The production frontend always requests relative `/api/...` URLs; the Vite proxy only handles local development and preview.
+Build with `npm run build --workspace @closedsources/web` and upload `apps/web/dist/` to a static host. Serve each generated route's own HTML and return `404.html` with HTTP 404 for unknown pages. Route `/api` and `/api/*` to the Worker first. A Cloudflare custom-domain Worker route or a reverse proxy can provide the same-origin boundary. The production frontend always requests relative `/api/...` URLs; the Vite proxy only handles local development and preview. Set `VITE_SITE_URL` to the fork's public HTTPS origin before building; see [search discovery](search-discovery.md).
 
 For example, an existing Nginx gateway serving the web build can preserve the full API path:
 
 ```nginx
-location /api/ {
+location ~ ^/api(?:/|$) {
     proxy_pass https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev;
     proxy_ssl_server_name on;
     proxy_ssl_verify on;
@@ -73,13 +73,15 @@ location /api/ {
     proxy_set_header Host YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev;
 }
 location / {
-    try_files $uri $uri/ /index.html;
+    try_files $uri $uri/index.html =404;
 }
+error_page 404 /404.html;
+location = /404.html { internal; }
 ```
 
 Replace the example hostname and configure TLS/static-root/access logging for your gateway. The CA bundle path shown is a Debian/Ubuntu example; use your system's trusted CA bundle while keeping upstream certificate verification enabled. Native Cloudflare route deployments do not require Nginx. Current code has no cross-origin API mode; simply putting the frontend and Worker on different hosts will not connect search. The browser must receive JSON for `/api` paths, including API 404/503 responses, rather than the SPA document.
 
-The frontend's 404 is client-rendered; HTTP 404 status handling for unknown SPA paths depends on the host. Include `/contribute` in SPA fallback handling. Review infrastructure request logging separately from the app, which has no search-history database or analytics. Contribution drafts are prepared in the browser and are not submitted to this API.
+The generated `404.html` preserves the site's missing-page design without pretending a missing URL exists. Known routes, including `/search` and `/contribute`, have their own generated HTML; keep search query parameters intact. Review infrastructure request logging separately from the app, which has no search-history database or analytics. Contribution drafts are prepared in the browser and are not submitted to this API.
 
 ## Scope of this release
 

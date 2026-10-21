@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router";
 import { useLocale } from "../lib/locale";
+import { updatePageMetadata } from "../lib/seo";
 import { BrandMark, Icon } from "./Icon";
 import { SourceDialog } from "./SourceDialog";
 
@@ -13,20 +14,8 @@ export function SiteLayout() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
     setMenuOpen(false);
-    const page =
-      location.pathname === "/"
-        ? ""
-        : location.pathname === "/search"
-          ? t("Search", "搜索")
-          : location.pathname === "/faq"
-            ? "FAQ"
-            : location.pathname === "/contribute"
-              ? t("Contribute", "补充目录")
-              : location.pathname === "/manifesto"
-                ? t("Our philosophy", "闭源宣言")
-                : "404";
-    document.title = `${page ? `${page} · ` : ""}proudlypaid — ${t("Your software is free. Let's fix that.", "您的软件居然免费。我们来解决这个问题。")}`;
-  }, [location.pathname, t]);
+    updatePageMetadata(location.pathname, language);
+  }, [location.pathname, language]);
 
   return (
     <div className="site-shell">
